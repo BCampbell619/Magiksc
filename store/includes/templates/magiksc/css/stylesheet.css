@@ -604,16 +604,17 @@ HR {
 
 .sideBoxContent>.parent-active {
     background-color: #eee;
+    border-left: solid 10px #FFF; 
     color: #111;
     position: relative;
     top: 0px;
-    left: 10px;
     transition: 0.5s;
 }
 
 .sideBoxContent>.active:hover, .sideBoxContent>.parent-active:hover {
-    left: 0px;
+    border-left: solid 0px #FFF;
     text-decoration: none;
+    transition: 0.5s;
 }
 
 sideBoxContent>.parent-active:hover {

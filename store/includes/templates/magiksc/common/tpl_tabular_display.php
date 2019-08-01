@@ -20,13 +20,15 @@ $zco_notifier->notify('NOTIFY_TPL_TABULAR_DISPLAY_START', $current_page_base, $l
 print_r($list_box_contents);
 echo "</pre>";*/
 ?>
-<div class="container-fluid">
-    <div class="row justify-content-end">
+
+<div class="row justify-content-end">
     <div class="prodSort col-xs-3 col-sm-3 col-md-3 col-lg-3">
-<?php echo "\t\t\t" . $list_box_contents[0][1]['text'] . "\n";
-echo "\t\t\t" . $list_box_contents[0][2]['text'] . "\n"; ?>
-    </div> 
+<?php 
+    echo "\t\t\t" . $list_box_contents[0][1]['text'] . "\n";
+    echo "\t\t\t" . $list_box_contents[0][2]['text'] . "\n";     
+?>
     </div>
+</div>
 <div id="wrapper_products" class="row">
 <?php for ($i = 1; $i < count($list_box_contents); $i++) { ?>
     
@@ -71,7 +73,6 @@ echo "\t\t\t" . $list_box_contents[0][2]['text'] . "\n"; ?>
     
 <?php } ?>
 </div> <!-- end of row for products -->
-</div> <!-- end of container-fluid -->
 <!-- <table id="<?php //echo 'cat' . $cPath . 'Table'; ?>" class="tabTable"> -->
 <?php
   /*for($row=0, $n=sizeof($list_box_contents); $row<$n; $row++) {

@@ -83,8 +83,9 @@
   }
   require($template->get_template_dir('tpl_header.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_header.php');?>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" id="contentMainWrapper">
-  <tr>
+<div class="container-fluid">
+<div class="row no-gutters">
+
 <?php
 if (COLUMN_LEFT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['customer_id'] == '') || (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_COLUMN_LEFT_OFF == 'true' and ($_SESSION['customers_authorization'] != 0 or $_SESSION['customer_id'] == ''))) {
   // global disable of column_left
@@ -93,21 +94,29 @@ if (COLUMN_LEFT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['custome
 if (!isset($flag_disable_left) || !$flag_disable_left) {
 ?>
 
- <td id="navColumnOne" class="columnLeft" style="width: <?php echo COLUMN_WIDTH_LEFT; ?>">
+ <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+ <!-- <div id="navColumnOne" class="columnLeft col-xs-12 col-sm-12 col-md-12 col-lg-12" style="width: <?php //echo COLUMN_WIDTH_LEFT; ?>"> -->
 <?php
  /**
   * prepares and displays left column sideboxes
   *
   */
 ?>
-<div id="navColumnOneWrapper" style="width: <?php echo BOX_WIDTH_LEFT; ?>"><?php require(DIR_WS_MODULES . zen_get_module_directory('column_left.php')); ?></div></td>
+<div class="row no-gutters">
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" >
+<?php require(DIR_WS_MODULES . zen_get_module_directory('column_left.php')); ?>
+<!-- <div id="navColumnOneWrapper" style="width: <?php //echo BOX_WIDTH_LEFT; ?>"><?php //require(DIR_WS_MODULES . zen_get_module_directory('column_left.php')); ?></div> -->
 <?php
 }
 ?>
-    <td valign="top">
+</div>
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+    <!-- <td valign="top"> -->
 <!-- bof  breadcrumb -->
 <?php if (DEFINE_BREADCRUMB_STATUS == '1' || (DEFINE_BREADCRUMB_STATUS == '2' && !$this_is_home_page) ) { ?>
-    <div id="navBreadCrumb"><?php echo $breadcrumb->trail(BREAD_CRUMBS_SEPARATOR); ?></div>
+<div class="row no-gutters">
+    <div id="navBreadCrumb" class="col-12"><?php echo $breadcrumb->trail(BREAD_CRUMBS_SEPARATOR); ?></div>
+</div>
 <?php } ?>
 <!-- eof breadcrumb -->
 
@@ -140,8 +149,9 @@ if (!isset($flag_disable_left) || !$flag_disable_left) {
 <?php
     }
   }
-?></td>
-
+?><!-- </td> -->
+</div> <!-- end of center wrapper -->
+</div>
 <?php
 //if (COLUMN_RIGHT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['customer_id'] == '') || (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_COLUMN_RIGHT_OFF == 'true' && $_SESSION['customers_authorization'] != 0)) {
 if (COLUMN_RIGHT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['customer_id'] == '') || (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_COLUMN_RIGHT_OFF == 'true' and ($_SESSION['customers_authorization'] != 0 or $_SESSION['customer_id'] == ''))) {
@@ -161,8 +171,9 @@ if (!isset($flag_disable_right) || !$flag_disable_right) {
 <?php
 }
 ?>
-  </tr>
-</table>
+</div><!-- end of all columns 12 -->
+</div><!-- end of contentMainWrapper id -->
+</div><!-- end of container-fluid -->
 
 <?php
  /**
@@ -175,7 +186,7 @@ if (!isset($flag_disable_right) || !$flag_disable_right) {
   require($template->get_template_dir('tpl_footer.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_footer.php');
 ?>
 
-</div>
+</div> <!-- end of container-fluid -->
 <!--bof- parse time display -->
 <?php
   if (DISPLAY_PAGE_PARSE_TIME == 'true') {

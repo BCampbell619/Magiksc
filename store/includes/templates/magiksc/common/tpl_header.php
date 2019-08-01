@@ -109,19 +109,17 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
 
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="topNav col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <ul>
-               <li style="float: left;">CURRENT TURNAROUND&#58; <strong>ABOUT 4 DAYS</strong> </li>
-                <li><div class="addthis_toolbox addthis_default_style"><a class="addthis_button_instagram_follow" addthis:userid="magiksc"><img src="includes/templates/magiksc/images/instagram.png" alt="Instagram icon" title="Follow Magiksc"></a></div></li>
-                <li><a href="http://www.magiksc.com/about.html">ABOUT US</a></li>
-                <li><a href="http://www.magiksc.com/contactus.html">CONTACT</a></li>
-            </ul>
-        </div>
+<div class="row no-gutters">
+    <div class="col-12 topNav">
+        <ul>
+           <li style="float: left;">CURRENT TURNAROUND&#58; <strong>ABOUT 4 DAYS</strong> </li>
+            <li><div class="addthis_toolbox addthis_default_style"><a class="addthis_button_instagram_follow" addthis:userid="magiksc"><img src="includes/templates/magiksc/images/instagram.png" alt="Instagram icon" title="Follow Magiksc"></a></div></li>
+            <li><a href="http://www.magiksc.com/about.html">ABOUT US</a></li>
+            <li><a href="http://www.magiksc.com/contactus.html">CONTACT</a></li>
+        </ul>
     </div>
-</div>
-  
-<nav class="mgkNav">
+
+<nav class="col-12 mgkNav">
 
     <a class="logo" href="http://www.thecampbellscorner.com/magiksc/index.php"><img src="includes/templates/magiksc/images/logo.png" alt="Magik Logo"></a>
     
@@ -190,7 +188,8 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
       </ul>
     </div>      
 </nav>
-
+</div>
+</div>
 <div class="navCollapse" id="MobileList">
     <div class="row" >
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="navColMain">

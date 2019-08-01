@@ -51,7 +51,7 @@ This sets the width of the columns for the sub categories
 
     //    $categories->fields['products_name'] = zen_get_products_name($categories->fields['products_id']);
 
-    $list_box_contents[$row][$col] = array('params' => 'class="categoryListBoxContents"' . ' ' . 'style="width:' . $col_width . '%;"',
+    $list_box_contents[$row][$col] = array('params' => 'class="col-xs-12 col-sm-6 col-md-4 col-lg-4"',
                                            'text' => '<div class="imgWrap"><a href="' . zen_href_link(FILENAME_DEFAULT, $cPath_new) . '">'. zen_image(DIR_WS_IMAGES . $categories->fields['categories_image'], $categories->fields['categories_name'], SUBCATEGORY_IMAGE_WIDTH, SUBCATEGORY_IMAGE_HEIGHT) . '</a></div> <div class="imgText" id="' . $id . '">'. $categories->fields['categories_name']  .'</div>');
 
     $col ++;

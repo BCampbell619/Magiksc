@@ -12,9 +12,10 @@
  * @version $Id: tpl_index_product_list.php 15589 2010-02-27 15:03:49Z ajeh $
  */
 ?>
-<div class="centerColumn" id="indexProductList">
-
-<h1 id="productListHeading"><?php echo $breadcrumb->last(); ?></h1>
+<div class="row no-gutters" id="indexProductList">
+    <div class="col-12">
+        <h1 id="productListHeading"><?php echo $breadcrumb->last(); ?></h1>
+    </div>
 
 <?php
 if (PRODUCT_LIST_CATEGORIES_IMAGE_STATUS == 'true') {

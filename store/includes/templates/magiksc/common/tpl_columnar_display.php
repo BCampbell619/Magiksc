@@ -35,7 +35,7 @@ if (is_array($list_box_contents) > 0 ) {
       if (isset($list_box_contents[$row][$col]['params'])) $r_params .= ' ' . (string)$list_box_contents[$row][$col]['params'];
      if (isset($list_box_contents[$row][$col]['text'])) {
 ?>
-    <?php echo '<div' . $r_params . '>' . $list_box_contents[$row][$col]['text'] .  '</div>' . "\n"; ?>
+    <?php echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">' . "\n \t"  . '<div' . $r_params . '>' . $list_box_contents[$row][$col]['text'] . "\n \t" . '</div>' . "\n </div> \n"; ?>
 <?php
       }
     }
