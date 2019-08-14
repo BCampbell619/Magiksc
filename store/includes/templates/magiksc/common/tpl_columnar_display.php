@@ -21,6 +21,7 @@ $zco_notifier->notify('NOTIFY_TPL_COLUMNAR_DISPLAY_START', $current_page_base, $
 <?php
  }
  ?>
+<div class="row">
 <?php
 
 if (is_array($list_box_contents) > 0 ) {
@@ -35,14 +36,16 @@ if (is_array($list_box_contents) > 0 ) {
       if (isset($list_box_contents[$row][$col]['params'])) $r_params .= ' ' . (string)$list_box_contents[$row][$col]['params'];
      if (isset($list_box_contents[$row][$col]['text'])) {
 ?>
-    <?php echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">' . "\n \t"  . '<div' . $r_params . '>' . $list_box_contents[$row][$col]['text'] . "\n \t" . '</div>' . "\n </div> \n"; ?>
+    <?php echo '<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">' . "\n \t"  . $list_box_contents[$row][$col]['text'] . "\n" . "</div> \n"; ?>
 <?php
       }
     }
 ?>
-<br class="clearBoth" />
 <?php
   }
 }
-
+?>
+</div>
+</div>
+<?php
 $zco_notifier->notify('NOTIFY_TPL_COLUMNAR_DISPLAY_END', $current_page_base, $list_box_contents, $title);

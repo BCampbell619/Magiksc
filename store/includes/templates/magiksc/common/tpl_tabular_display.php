@@ -16,23 +16,23 @@ $zco_notifier->notify('NOTIFY_TPL_TABULAR_DISPLAY_START', $current_page_base, $l
 //print_r($list_box_contents);
   $cell_scope = (!isset($cell_scope) || empty($cell_scope)) ? 'col' : $cell_scope;
   $cell_title = (!isset($cell_title) || empty($cell_title)) ? 'list' : $cell_title;
-/*echo "<pre>";
+echo "<pre>";
 print_r($list_box_contents);
-echo "</pre>";*/
+echo "</pre>";
 ?>
 
-<div class="row justify-content-end">
-    <div class="prodSort col-xs-3 col-sm-3 col-md-3 col-lg-3">
+<div class="row justify-content-start">
+    <div class="prodSort col-xs-12 col-sm-12 col-md-12 col-lg-12">
 <?php 
     echo "\t\t\t" . $list_box_contents[0][1]['text'] . "\n";
     echo "\t\t\t" . $list_box_contents[0][2]['text'] . "\n";     
 ?>
     </div>
 </div>
-<div id="wrapper_products" class="row">
+<div class="row">
 <?php for ($i = 1; $i < count($list_box_contents); $i++) { ?>
     
-        <div class="magikProducts col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
             <?php //echo str_replace('width="67" height="80"', 'width="201" height="240"',$list_box_contents[$i][0]['text']); ?>
             <?php 
                                                     

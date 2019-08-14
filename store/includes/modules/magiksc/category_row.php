@@ -52,7 +52,7 @@ This sets the width of the columns for the sub categories
     //    $categories->fields['products_name'] = zen_get_products_name($categories->fields['products_id']);
 
     $list_box_contents[$row][$col] = array('params' => 'class="categoryListBoxContents"',
-                                           'text' => "\n \t" . '<div class="imgWrap text-center"><a href="' . zen_href_link(FILENAME_DEFAULT, $cPath_new) . '">'. zen_image(DIR_WS_IMAGES . $categories->fields['categories_image'], $categories->fields['categories_name'], SUBCATEGORY_IMAGE_WIDTH, SUBCATEGORY_IMAGE_HEIGHT) . '</a></div>'. "\n \t" . '<div class="imgText" id="' . $id . '">'. $categories->fields['categories_name']  .'</div>' . "\n");
+                                           'text' => "\n \t" . '<div class="text-center"><a href="' . zen_href_link(FILENAME_DEFAULT, $cPath_new) . '">'. zen_image(DIR_WS_IMAGES . $categories->fields['categories_image'], $categories->fields['categories_name'], SUBCATEGORY_IMAGE_WIDTH, SUBCATEGORY_IMAGE_HEIGHT) . '</a></div>'. "\n \t" . '<div class="imgText" id="' . $id . '">'. $categories->fields['categories_name']  .'</div>' . "\n");
 
     $col ++;
     if ($col > (MAX_DISPLAY_CATEGORIES_PER_ROW -1)) {

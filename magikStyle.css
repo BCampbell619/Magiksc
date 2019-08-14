@@ -1,0 +1,507 @@
+div#preload { display: none; }
+
+h1{
+    font-family: "Arial";
+	font-size: 11px;
+	color: #666666;
+	font-weight:bold;
+	border:0;
+	display:inline;
+}
+
+h2{
+    font-family: Arial;
+	font-size: 18px;
+	width: 800px;
+	color:#333333;
+	margin: 0px 0px 0px 0px;
+	padding: 25px 0px 0px 0px;
+	width: 710px;
+	
+}
+h3{
+	font-size: 11px;
+	display:inline;
+}
+h4{
+	font-size: 10px;
+	display:inline;
+	color:#444444;
+	font-family:Arial, Helvetica, sans-serif;
+}
+body 
+{
+	/*background-image: url(images/magikback5b.gif);*/
+	margin: 0 auto;
+	width: 1000px;
+	background-color: #FFF;
+	background-repeat: repeat-x;
+	
+}
+
+.mediumgray{
+	color:#333333;
+	font-family: "Arial";
+	font-size: 16px;
+}
+
+.main
+{
+	width: 1000px;
+	background-color: #fff;
+	float:left;
+	margin:0px;
+	color:#333;
+	padding: 0px 0px 0px 0px;
+	border:2px #111 solid;
+}
+
+.main>a:link,.main>a:visited{
+	color:#333;
+}
+
+.main>a:hover{
+	color:#666;
+}
+
+.main>.a {
+    color:#FFF;
+}
+
+.main>.a:hover {
+    color:#666;
+}
+
+.main>.a:visited {
+    color: #FFF;
+}
+
+.featuredproduct{
+	width:215px;
+	height:316px;
+	border: 2px #333 groove; 
+	float:left;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin-top:2px;
+}
+
+.featuredproduct>a:link,.featuredproduct>a:visited{
+	color:#222;
+}
+.featuredproduct>a:hover{
+	color:#777;
+}
+
+
+/*
+
+New Navigation Styles
+
+*/
+
+.navHeaderContainer{
+    background-color: #111;
+    margin: 0;
+    width: 100%;
+}
+
+.navHeader {
+    width: 100%;
+}
+
+.navHeader>a>img {
+    margin: 12px 8px;
+}
+
+.navHeader>span{
+    color: #FFF;
+    font-family: sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    padding: 8px 0px 8px 0px;
+    position: relative;
+    top: -28px;
+    text-align: center;
+    width: auto;
+}
+
+.navContainer {
+    background-color: #111;
+    width: 100%;
+}
+
+.new_nav {
+    background-color: #111;
+    color: #FFF;
+    margin: auto;
+    width: 800px;
+}
+
+.new_nav>ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.new_nav>ul>li {
+    color: #FFF;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+.new_nav>ul>li>a {
+    color: #FFF;
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: 300;
+    margin: 0px 5px;
+    padding: 18px;
+    text-align: center;
+    text-decoration: none;
+    min-width: 80px;
+}
+
+.new_nav>ul>li>a:first-of-type {
+    margin: 0px 5px 0 0;
+}
+
+.new_nav>ul>li>a:hover {
+    background-color: #AEAEAE;
+    color: #111;
+}
+
+/*
+
+End of New Nav Styles
+
+*/
+
+
+
+
+.headingline{
+    border-bottom: 5px solid #333333;
+   /*display: inline;*/
+   margin: 10px 0 0 45px;
+   padding: 0;
+   float: left;
+   width:900px;
+   height:36px; 
+}
+
+.headingline>h2 {
+    margin: 0;
+    padding: 2px;
+}
+
+.headingline2{
+	color:#FFFFFF;
+	display: inline;
+	margin: 1px 0px 0px 0px;
+	padding-top:5px;
+	float: left;
+	width:1000px;
+	height:25px;
+	background-image: url(images/headingback.jpg);
+	background-repeat: repeat-x;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	text-align:center;
+}
+
+.headingline2 a:link,.headingline2 a:visited{
+	color:#FFFFFF;
+}
+.headingline2 a:hover{
+	color:#FF0;
+}
+
+.searchHeading{
+	font-family: "Arial";
+	font-size: 11px;
+	color: #666666;
+	font-weight:bold;
+	background-color:#000;
+	float:left;
+	width:100%;
+}
+.headTitle{
+	float: left;
+	padding-left: 30px;
+	padding-top: 15px;
+	
+}
+.search{
+	float: right;
+	width: 260px;
+	height: 30px;
+	padding-top: 10px;
+}
+.homeflash{
+
+	width: 755px;
+	height: 320px;
+
+	float: left;
+	background-color:#000;
+}
+.logoBar{
+	float:left;	
+}
+
+
+
+.topNav{
+	float:left;
+	height: 30px;
+	width: 350px;
+	margin-left:  70px;
+	
+	padding-top: 50px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #D40404;
+	font-size: 14px;	
+}
+.homepicmenu{
+	float:left;
+	padding: 2px 0px 2px 0px;
+	width: 989px;
+	float:left;
+	border-top:2px #666 solid;
+	margin: 0px 3px 6px 6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#FFF;
+	background-color:#111;
+}
+
+
+.homepicmenu a:link,.homepicmenu a:visited{
+	color:#CCC;
+}
+.homepicmenu a:hover{
+	color:#09F;
+}
+
+
+.footer{
+	font-size: 11px;
+	float : left;
+	width: 1000px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#999;
+}
+.footer a:link,.footer a:visited{
+	color:#999;
+}
+.custominfo{
+	margin-left: 120px;
+	padding-top: 25px;
+
+}
+.customheading{
+	font-family: Arial;
+	font-size: 18px;
+	width: 800px;
+	padding-top: 20px;
+	text-align: center;
+	color: #275627;
+}
+.customtext{
+	font-family: Arial;
+	font-size: 14px;
+	width: 600px;
+	padding-top: 20px;
+	margin-left: 120px;
+	float:left;
+	
+}
+.customtext2{
+	font-family: Arial;
+	font-size: 14px;
+	width: 700px;
+	padding-top: 20px;
+	margin-left: 50px;
+	float:left;
+	
+}
+.customsubmitbutton{
+	padding-left: 350px;
+	padding-top: 20px;
+}
+.contactbox{
+	float:right;
+	width: 200px;
+	padding-right: 332px;
+	padding-top: 5px;
+}
+.contactcomment{
+	float: left;
+	width: 100px;
+	padding-left: 120px;
+	
+}
+
+.hometextbanner{
+	padding:4px 0px 0px 0px;
+	width: 986px;
+	height: 20px;
+	float:left;
+	background-color:#111;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+table {
+    background: white
+}
+
+table > #contentMainWrapper {
+	background: white !important
+}
+
+/**  SIMPLY SCROLL **/
+/**  *************  **/
+
+/* Container DIV - automatically generated */
+.simply-scroll-container { 
+	position: relative;
+}
+
+/* Clip DIV - automatically generated */
+.simply-scroll-clip { 
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+}
+
+/* UL/OL/DIV - the element that simplyScroll is inited on
+Class name automatically added to element */
+.simply-scroll-list { 
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+	
+.simply-scroll-list li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+	
+.simply-scroll-list li img {
+	border: none;
+	display: block;
+}
+
+/* Custom class modifications - adds to / overrides above
+
+.simply-scroll is default base class */
+
+/* Container DIV */
+.simply-scroll { 
+	width: 986px;
+	height: 16px;
+}
+
+/* Clip DIV */
+.simply-scroll .simply-scroll-clip {
+    width: 986px;
+	height: 16px;
+}
+	
+/* Explicitly set height/width of each list item */	
+.simply-scroll .simply-scroll-list li {
+	float: left; /* Horizontal scroll only */
+	width: 2150px;
+	height: 16px;
+}
+
+/**  END SIMPLY SCROLL **/
+/**  *************  **/
+
+/**  IMAGE POPUP **/
+/**  *************  **/
+.thumbnail{
+position: relative;
+z-index: 0;
+}
+
+.thumbnail:hover{
+background-color: transparent;
+z-index: 50;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+position: absolute;
+background-color: lightyellow;
+left: -1000px;
+visibility: hidden;
+color: black;
+text-decoration: none;
+}
+
+.thumbnail span img{ /*CSS for enlarged image*/
+border-width: 0;
+padding: 2px;
+}
+
+.thumbnail:hover span{ /*CSS for enlarged image on hover*/
+visibility: visible;
+bottom: -20px;
+left: -20px; /*position where enlarged image should offset horizontally */
+z-index: 51;
+
+}
+
+.footer_links {
+    width:1000px; 
+    text-align:center;
+    padding:2px 0px 3px 0px;
+    font-family: 'Arial', "Helvetica", sans-serif;
+	font-size:12px;
+}
+
+.footer_links>a {
+    color: #111;
+    text-decoration: none;
+}
+
+.itemTitle>a {
+    color: #000;
+}
+
+.category-products {
+    color: #000;
+}
+
+.sideBoxContent>a {
+    color: #000;
+    font-weight: 300;
+}
+
+.sideBoxContent>a:visited {
+    color: #000;
+    font-weight: 300;
+}
+
+#navBreadCrumb>a, #navBreadCrumb>a:visited {
+    color: #000;
+}
+
+.navSplitPagesLinks>a, .navSplitPagesLinks>a:visited {
+    color: #000;
+}
+
+
+/**  END IMAGE POPUP **/
+/**  *************  **/

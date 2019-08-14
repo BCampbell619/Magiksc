@@ -7,14 +7,14 @@
  * make a directory /templates/my_template/privacy<br />
  * copy /templates/templates_defaults/common/tpl_footer.php to /templates/my_template/privacy/tpl_header.php<br />
  * to override the global settings and turn off the footer un-comment the following line:<br />
- * <br /> */
-  $flag_disable_header = true;
- /*
+ * <br />
+ * $flag_disable_header = true;<br />
+ *
  * @package templateSystem
- * @copyright Copyright 2003-2016 Zen Cart Development Team
+ * @copyright Copyright 2003-2006 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: Author: DrByte  Sat Oct 17 22:01:06 2015 -0400 Modified in v1.5.5 $
+ * @version $Id: tpl_header.php 4813 2006-10-23 02:13:53Z drbyte $
  */
 ?>
 
@@ -24,11 +24,13 @@
     echo $messageStack->output('header');
   }
   if (isset($_GET['error_message']) && zen_not_null($_GET['error_message'])) {
-    echo zen_output_string_protected(urldecode($_GET['error_message']));
+  echo htmlspecialchars(urldecode($_GET['error_message']));
   }
   if (isset($_GET['info_message']) && zen_not_null($_GET['info_message'])) {
-   echo zen_output_string_protected($_GET['info_message']);
-  }
+   echo htmlspecialchars($_GET['info_message']);
+} else {
+
+}
 ?>
 
 
@@ -37,99 +39,30 @@
 if (!isset($flag_disable_header) || !$flag_disable_header) {
 ?>
 
-<div id="headerWrapper">
-<!--bof-navigation display-->
-<div id="navMainWrapper">
-<div id="navMain">
-    <ul class="back">
-    <li><?php echo '<a href="' . HTTP_SERVER . DIR_WS_CATALOG . '">'; ?><?php echo HEADER_TITLE_CATALOG; ?></a></li>
-<?php if ($_SESSION['customer_id']) { ?>
-    <li><a href="<?php echo zen_href_link(FILENAME_LOGOFF, '', 'SSL'); ?>"><?php echo HEADER_TITLE_LOGOFF; ?></a></li>
-    <li><a href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>"><?php echo HEADER_TITLE_MY_ACCOUNT; ?></a></li>
-<?php
-      } else {
-        if (STORE_STATUS == '0') {
-?>
-    <li><a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>"><?php echo HEADER_TITLE_LOGIN; ?></a></li>
-<?php } } ?>
-
-<?php if ($_SESSION['cart']->count_contents() != 0) { ?>
-    <li><a href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>"><?php echo HEADER_TITLE_CART_CONTENTS; ?></a></li>
-    <li><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><?php echo HEADER_TITLE_CHECKOUT; ?></a></li>
-<?php }?>
-</ul>
-</div>
-<div id="navMainSearch"><?php require(DIR_WS_MODULES . 'sideboxes/search_header.php'); ?></div>
-<br class="clearBoth" />
-</div>
-<!--eof-navigation display-->
-
-<!--bof-branding display-->
-<div id="logoWrapper">
-    <div id="logo"><?php echo '<a href="' . HTTP_SERVER . DIR_WS_CATALOG . '">' . zen_image($template->get_template_dir(HEADER_LOGO_IMAGE, DIR_WS_TEMPLATE, $current_page_base,'images'). '/' . HEADER_LOGO_IMAGE, HEADER_ALT_TEXT, HEADER_LOGO_WIDTH, HEADER_LOGO_HEIGHT) . '</a>'; ?></div>
-<?php if (HEADER_SALES_TEXT != '' || (SHOW_BANNERS_GROUP_SET2 != '' && $banner = zen_banner_exists('dynamic', SHOW_BANNERS_GROUP_SET2))) { ?>
-    <div id="taglineWrapper">
-<?php
-              if (HEADER_SALES_TEXT != '') {
-?>
-      <div id="tagline"><?php echo HEADER_SALES_TEXT;?></div>
-<?php
-              }
-?>
-<?php
-              if (SHOW_BANNERS_GROUP_SET2 != '' && $banner = zen_banner_exists('dynamic', SHOW_BANNERS_GROUP_SET2)) {
-                if ($banner->RecordCount() > 0) {
-?>
-      <div id="bannerTwo" class="banners"><?php echo zen_display_banner('static', $banner);?></div>
-<?php
-                }
-              }
-?>
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="topNav col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <ul>
+               <li style="float: left;">CURRENT TURNAROUND&#58; <strong>ABOUT <?php echo $turnaround; ?> DAYS</strong> </li>
+                <li><div class="addthis_toolbox addthis_default_style"><a class="addthis_button_instagram_follow" addthis:userid="magiksc"><img src="../../../../../images/instagram.png" alt="Instagram icon" title="Follow Magiksc"></a></div></li>
+                <li><a href="http://www.magiksc.com/about.html">ABOUT US</a></li>
+                <li><a href="http://www.magiksc.com/contactus.html">CONTACT</a></li>
+            </ul>
+        </div>
     </div>
-<?php } // no HEADER_SALES_TEXT or SHOW_BANNERS_GROUP_SET2 ?>
 </div>
-<br class="clearBoth" />
-<!--eof-branding display-->
+  
+<nav class="mgkNav">
 
-<!--eof-header logo and navigation display-->
-
-<!--bof-optional categories tabs navigation display-->
-<?php require($template->get_template_dir('tpl_modules_categories_tabs.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_categories_tabs.php'); ?>
-<!--eof-optional categories tabs navigation display-->
-
-<!--bof-header ezpage links-->
-<?php if (EZPAGES_STATUS_HEADER == '1' or (EZPAGES_STATUS_HEADER == '2' and (strstr(EXCLUDE_ADMIN_IP_FOR_MAINTENANCE, $_SERVER['REMOTE_ADDR'])))) { ?>
-<?php require($template->get_template_dir('tpl_ezpages_bar_header.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_ezpages_bar_header.php'); ?>
-<?php } ?>
-<!--eof-header ezpage links-->
-</div>
-<?php } ?>
-
-<!--  Start of custom header  -->
-
-
-<div class="container-fluid">
-<div class="row no-gutters">
-    <div class="col-12 topNav">
-        <ul>
-           <li style="float: left;">CURRENT TURNAROUND&#58; <strong>ABOUT 4 DAYS</strong> </li>
-            <li><div class="addthis_toolbox addthis_default_style"><a class="addthis_button_instagram_follow" addthis:userid="magiksc"><img src="includes/templates/magiksc/images/instagram.png" alt="Instagram icon" title="Follow Magiksc"></a></div></li>
-            <li><a href="http://www.magiksc.com/about.html">ABOUT US</a></li>
-            <li><a href="http://www.magiksc.com/contactus.html">CONTACT</a></li>
-        </ul>
-    </div>
-
-<nav class="col-12 mgkNav">
-
-    <a class="logo" href="http://www.thecampbellscorner.com/magiksc/index.php"><img src="includes/templates/magiksc/images/logo.png" alt="Magik Logo"></a>
+    <a class="logo" href="http://www.magiksc.com/index.html"><img src="../../../../../images/logo.png" alt="Magik Logo"></a>
     
-    <!--<button class="navToggle" data-target="MobileList">
+    <button class="navToggle" data-target="MobileList">
     </button>
 
     <div class="Collapsed" id="list">
       <ul>
           <li class="dropdown" id="MXList">
-              <a href="#">MOTO <img src="includes/templates/magiksc/images/chevronDownBlack.png" alt="Carat" id="arrDown" width="10" height="12"></a>
+              <a href="#">MOTO <img src="../../../../../images/chevronDownWhite.png" alt="Carat" id="arrDown" width="10" height="12"></a>
                 <div class="drop-MX-hide" id="ProdOptions">          
                     <ul>
                         <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">FULL BIKE KITS</a></li>
@@ -146,7 +79,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                 </div>
           </li>
           <li class="dropdown" id="HelmetNav">
-              <a href="#">HELMETS <img src="includes/templates/magiksc/images/chevronDownBlack.png" alt="Carat" id="arrDown" width="10" height="12"></a>
+              <a href="#">HELMETS <img src="../../../../../images/chevronDownWhite.png" alt="Carat" id="arrDown" width="10" height="12"></a>
                   <div class="drop-HT-hide" id="HelmetOptions">          
                     <ul>
                         <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">HELMET WRAP</a></li>
@@ -155,9 +88,9 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                         <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">FULL FACE HELMETS</a></li>
                     </ul>
               </div>
-          </li>
+          </li> -->
          <!-- <li class="dropdown" id="BikeNav">
-              <a href="#">BIKE <img src="includes/templates/magiksc/images/chevronDownBlack.png" alt="Carat" id="arrDown" width="10" height="12"></a>
+              <a href="#">BIKE <img src="../../../../../images/chevronDownWhite.png" alt="Carat" id="arrDown" width="10" height="12"></a>
                   <div class="drop-BK-hide" id="BikeOptions">          
                     <ul>
                         <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">CUSTOM FENDERS</a></li>
@@ -174,8 +107,8 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                     </ul>
                 </div>
           </li> -->
-          <!--<li class="dropdown" id="OffRdNav">
-              <a href="#">OFF-ROAD <img src="includes/templates/magiksc/images/chevronDownBlack.png" alt="Carat" id="arrDown" width="10" height="12"></a>
+<!--          <li class="dropdown" id="OffRdNav">
+              <a href="#">OFF-ROAD <img src="../../../../../images/chevronDownWhite.png" alt="Carat" id="arrDown" width="10" height="12"></a>
                   <div class="drop-UTV-hide" id="UTVOptions">          
                     <ul>
                         <li><a href="http://www.magiksc.com/store/utv-graphic-kits-c-64.html">UTV GRAPHIC KITS</a></li>
@@ -186,11 +119,10 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
           </li>
 
       </ul>
-    </div>  -->
+    </div>      
 </nav>
-</div>
-</div>
-<!-- <div class="navCollapse" id="MobileList">
+
+<div class="navCollapse" id="MobileList">
     <div class="row" >
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="navColMain">
            <h5>MOTO</h5>
@@ -210,7 +142,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                 <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">HELMET ID KITS</a></li>
                 <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">HALF SHELL HELMETS</a></li>
                 <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">FULL FACE HELMETS</a></li>
-            </ul>
+            </ul> -->
             <!--<h5>BIKE</h5>
             <ul>
                 <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">MTB CUSTOM FENDERS</a></li>
@@ -222,7 +154,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                 <li><a href="http://www.magiksc.com/store/pop-up-tents-c-58.html">FULL FACE HELMETS</a></li>
                 <li><a href="http://www.magiksc.com/store/apparel-c-3.html">BIKE ACCESSORIES</a></li>
             </ul>-->
-            <!--<h5>OFF-ROAD</h5>
+            <!-- <h5>OFF-ROAD</h5>
             <ul>
                 <li><a href="http://www.magiksc.com/store/utv-graphic-kits-c-64.html">UTV GRAPHIC KITS</a></li>
                 <li><a href="http://www.magiksc.com/store/magik-banners-stickers-c-57.html">PIT ESSENTIALS</a></li>
@@ -236,10 +168,71 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                 <li><a href="http://www.magiksc.com/about.html">ABOUT US</a></li>
                 <li><div class="addthis_toolbox addthis_default_style"><a class="addthis_button_instagram_follow" addthis:userid="magiksc"><img src="images/instagram.png" alt="Instagram icon" title="Follow Magiksc"></a></div></li>
             </ul>
-            <h5>CURRENT TURNAROUND&#58; <strong>ABOUT 4 DAYS</strong></h5>
+            <h5>CURRENT TURNAROUND&#58; <strong>ABOUT <?php echo $turnaround; ?> DAYS</strong></h5>
         </div>
     </div>
 </div> -->
+  
+<!-- <div class="headingline2" id="subheading" name="subheading"> -->
+<!-- <a href="http://www.magiksc.com/store/magik-sc-graphics-honda-graphics-c-29_36.html"> HONDA </a> &nbsp;|&nbsp; --> <!-- <a href="http://www.magiksc.com/store/magik-sc-graphics-kawasaki-graphics-c-29_39.html"> KAWASAKI </a> &nbsp;|&nbsp; <a href="http://www.magiksc.com/store/magik-sc-graphics-ktm-graphics-c-29_38.html"> KTM </a> &nbsp;|&nbsp; <a href="http://www.magiksc.com/store/magik-sc-graphics-suzuki-graphics-c-29_40.html"> SUZUKI </a> &nbsp;|&nbsp; <a href="http://www.magiksc.com/store/magik-sc-graphics-yamaha-graphics-c-29_37.html"> YAMAHA </a> &nbsp;|&nbsp; <a href="http://www.magiksc.com/store/magik-sc-graphics-pitbike-graphics-c-29_41.html"> PIT BIKE / OTHER </a> -->
+<!-- </div> -->
+
+<div class="navHeaderContainer">
+    <div class="navHeader">
+       <a href="http://www.magiksc.com">
+          <img title="Motocross Graphics" src="http://www.magiksc.com/images/logo.png" width="185px" height="53px" alt="Motocross Graphics"/>
+          </a>
+        <span>KUSTOM GRAPHICS MADE TO KUSTOMIZE YOUR RIDE</span>
+    </div>
+</div>
+
+<div class="navContainer">
+    <div class="new_nav">
+        <ul>
+            <li><a href="http://www.magiksc.com/store/magik-sc-graphics-honda-graphics-c-29_36.html">HONDA</a></li>
+            <li><a href="http://www.magiksc.com/store/magik-sc-graphics-kawasaki-graphics-c-29_39.html">KAWASAKI</a></li>
+            <li><a href="http://www.magiksc.com/store/magik-sc-graphics-ktm-graphics-c-29_38.html">KTM</a></li>
+            <li><a href="http://www.magiksc.com/store/magik-sc-graphics-suzuki-graphics-c-29_40.html">SUZUKI</a></li>
+            <li><a href="http://www.magiksc.com/store/magik-sc-graphics-yamaha-graphics-c-29_37.html">YAMAHA</a></li>
+            <li><a href="http://www.magiksc.com/store/magik-sc-graphics-pitbike-graphics-c-29_41.html">PIT BIKE / OTHER</a></li>
+        </ul>
+    </div>
+</div>
 
 
-<!--   End of custom header   -->
+<?php if (HEADER_SALES_TEXT != '' || (SHOW_BANNERS_GROUP_SET2 != '' && $banner = zen_banner_exists('dynamic', SHOW_BANNERS_GROUP_SET2))) { ?> 
+    <div id="taglineWrapper">
+<?php
+              if (HEADER_SALES_TEXT != '') {
+?>
+      <div id="tagline"><?php echo HEADER_SALES_TEXT;?></div>
+<?php
+              }
+?>
+<?php
+              if (SHOW_BANNERS_GROUP_SET2 != '' && $banner = zen_banner_exists('dynamic', SHOW_BANNERS_GROUP_SET2)) {
+                if ($banner->RecordCount() > 0) {
+?>
+      <div id="bannerTwo" class="banners"><?php echo zen_display_banner('static', $banner);?></div>
+<?php
+                }
+              }
+?>
+  
+<?php } // no HEADER_SALES_TEXT or SHOW_BANNERS_GROUP_SET2 ?>
+
+<br class="clearBoth" />
+<!--eof-branding display-->
+
+<!--eof-header logo and navigation display-->
+
+<!--bof-optional categories tabs navigation display-->
+<?php //require($template->get_template_dir('tpl_modules_categories_tabs.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_categories_tabs.php'); ?>
+<!--eof-optional categories tabs navigation display-->
+
+<!--bof-header ezpage links-->
+<?php if (EZPAGES_STATUS_HEADER == '1' or (EZPAGES_STATUS_HEADER == '2' and (strstr(EXCLUDE_ADMIN_IP_FOR_MAINTENANCE, $_SERVER['REMOTE_ADDR'])))) { ?>
+<?php require($template->get_template_dir('tpl_ezpages_bar_header.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_ezpages_bar_header.php'); ?>
+<?php } ?>
+<!--eof-header ezpage links-->
+<?php } ?>

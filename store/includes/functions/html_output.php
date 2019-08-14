@@ -208,7 +208,7 @@ function zen_catalog_href_link($page = '', $parameters = '', $connection = 'NONS
 
 // alt is added to the img tag even if it is null to prevent browsers from outputting
 // the image filename as default
-    $image = '<img src="' . zen_output_string($src) . '" alt="' . zen_output_string($alt) . '"';
+    $image = '<img class="rounded mx-auto d-block imgSize" src="' . zen_output_string($src) . '" alt="' . zen_output_string($alt) . '"';
 
     if (zen_not_null($alt)) {
       $image .= ' title=" ' . zen_output_string($alt) . ' "';
@@ -246,16 +246,16 @@ function zen_catalog_href_link($page = '', $parameters = '', $connection = 'NONS
       }
 // only use proportional image when image is larger than proportional size
       if ($image_size[0] < $width and $image_size[1] < $height) {
-        $image .= ' width="' . $image_size[0] . '" height="' . intval($image_size[1]) . '"';
+        //$image .= ' width="' . $image_size[0] . '" height="' . intval($image_size[1]) . '"';
       } else {
-        $image .= ' width="' . round($width) . '" height="' . round($height) . '"';
+        //$image .= ' width="' . round($width) . '" height="' . round($height) . '"';
       }
     } else {
        // override on missing image to allow for proportional and required/not required
       if (IMAGE_REQUIRED == 'false') {
         return false;
       } else if (substr($src, 0, 4) != 'http') {
-        $image .= ' width="' . intval(SMALL_IMAGE_WIDTH) . '" height="' . intval(SMALL_IMAGE_HEIGHT) . '"';
+        //$image .= ' width="' . intval(SMALL_IMAGE_WIDTH) . '" height="' . intval(SMALL_IMAGE_HEIGHT) . '"';
       }
     }
 

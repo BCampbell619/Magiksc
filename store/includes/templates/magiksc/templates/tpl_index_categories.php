@@ -13,11 +13,11 @@
  * @version $Id: Author: DrByte  Sun Oct 18 01:26:46 2015 -0400 Modified in v1.5.5 $
  */
 ?>
-<div class="row no-gutters" id="indexCategories">
+<div class="row" id="indexCategories">
 <?php if ($show_welcome == true) { ?>
 <div class="col-12">
 <h1 id="indexCategoriesHeading"><?php echo HEADING_TITLE; ?></h1>
-</div>
+
 <?php if (SHOW_CUSTOMER_GREETING == 1) { ?>
 <h2 class="greeting"><?php echo zen_customer_greeting(); ?></h2>
 <?php } ?>

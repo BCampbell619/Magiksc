@@ -102,8 +102,8 @@ if (!isset($flag_disable_left) || !$flag_disable_left) {
   *
   */
 ?>
-<div class="row no-gutters">
-<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" >
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" >
 <?php require(DIR_WS_MODULES . zen_get_module_directory('column_left.php')); ?>
 <!-- <div id="navColumnOneWrapper" style="width: <?php //echo BOX_WIDTH_LEFT; ?>"><?php //require(DIR_WS_MODULES . zen_get_module_directory('column_left.php')); ?></div> -->
 <?php

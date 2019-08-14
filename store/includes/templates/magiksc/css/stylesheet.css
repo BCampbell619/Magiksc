@@ -208,11 +208,11 @@ HR {
 /*navigation*/
 
 .navSplitPagesResult {
-    border: none;
+    border: solid 1px #333;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     padding: 10px 12px;
-    text-align: center;
+    text-align: left;
 }
 .navSplitPagesLinks {}
 .navNextPrevCounter {
@@ -356,11 +356,34 @@ HR {
     text-decoration: none;
 }
 
-.categoryListBoxContents>.imgText {
+.imgText {
+    background-color: #eee;
+    border: solid 1px #eee;
+    color: #333;
     font-weight: 300;
+    margin: 15px auto;
     padding: 6px 0;
     position: relative;
-    top: -35px;
+    top: 0px;
+    text-align: center;
+    max-width: 300px;
+    z-index: 0
+}
+
+@media screen and (max-width: 1240px) {
+    
+    .imgText {
+        max-width: 200px;
+    }
+    
+}
+
+@media screen and (max-width: 756px) {
+    
+    .imgText {
+        max-width: 300px;
+    }
+    
 }
 
 /*.content,*/ #productDescription, .shippingEstimatorWrapper {
@@ -574,8 +597,8 @@ HR {
 
 .sideBoxContent>.category-subs:hover {
     background-color: #eee;
+    border-left: solid 4px #FFF;
     color: #111;
-    left: 10px;
     text-decoration: none;
 }
 
@@ -750,7 +773,7 @@ h3.rightBoxHeading a:hover {
 	float: right;
 	}
 
-.forward, #shoppingCartDefault #PPECbutton {
+#shoppingCartDefault #PPECbutton {
 	float: right;
 	}
 

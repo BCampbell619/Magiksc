@@ -24,7 +24,7 @@ require(DIR_WS_MODULES . zen_get_module_directory('footer.php'));
 
     <div class="row mgkFooter">
      
-     <div class="mgkFtNav offset-xs-4 col-xs-4 offset-sm-1 col-sm-3 offset-md-1 col-md-2 offset-lg-1 col-lg-2">
+     <div class="mgkFtNav offset-xs-4 col-xs-4 offset-sm-1 col-sm-3 offset-md-1 col-md-2 offset-lg-1 col-lg-2 border-right">
          <h6>Moto</h6>
          <ul>
              <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">FULL BIKE KITS</a></li>
@@ -38,7 +38,7 @@ require(DIR_WS_MODULES . zen_get_module_directory('footer.php'));
          </ul>
          
     </div>
-    <div class="mgkFtNav offset-xs-4 col-xs-4 col-sm-4 col-md-2 col-lg-2">
+    <div class="mgkFtNav offset-xs-4 col-xs-4 col-sm-4 col-md-2 col-lg-2 border-right">
          <h6>Helmets</h6>
          <ul>
              <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">HELMET WRAP</a></li>
@@ -47,7 +47,7 @@ require(DIR_WS_MODULES . zen_get_module_directory('footer.php'));
              <li><a href="http://www.magiksc.com/store/rider-id-c-1.html">FULL FACE HELMETS</a></li>
          </ul>
      </div>
-     <div class="mgkFtNav offset-xs-4 col-xs-4 col-sm-4 col-md-2 col-lg-2">
+     <div class="mgkFtNav offset-xs-4 col-xs-4 col-sm-4 col-md-2 col-lg-2 border-right">
          <h6>Bike</h6>
          <ul>
              <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">MTB CUSTOM FENDERS</a></li>
@@ -61,7 +61,7 @@ require(DIR_WS_MODULES . zen_get_module_directory('footer.php'));
          </ul>
          
      </div>
-     <div class="mgkFtNav offset-xs-4 col-xs-4 col-sm-6 col-md-2 col-lg-2">
+     <div class="mgkFtNav offset-xs-4 col-xs-4 col-sm-6 col-md-2 col-lg-2 border-right">
          <h6>Off&ndash;Road</h6>
          <ul>
              <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">UTV GRAPHIC KITS</a></li>
