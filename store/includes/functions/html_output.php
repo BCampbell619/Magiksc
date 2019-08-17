@@ -208,7 +208,7 @@ function zen_catalog_href_link($page = '', $parameters = '', $connection = 'NONS
 
 // alt is added to the img tag even if it is null to prevent browsers from outputting
 // the image filename as default
-    $image = '<img class="rounded mx-auto d-block imgSize" src="' . zen_output_string($src) . '" alt="' . zen_output_string($alt) . '"';
+    $image = '<img class="img-fluid imgSize" src="' . zen_output_string($src) . '" alt="' . zen_output_string($alt) . '"';
 
     if (zen_not_null($alt)) {
       $image .= ' title=" ' . zen_output_string($alt) . ' "';
@@ -446,7 +446,7 @@ function zen_catalog_href_link($page = '', $parameters = '', $connection = 'NONS
         return $field;
     }
     
-    $field = '<input type="' . zen_output_string($type) . '" name="' . zen_sanitize_string(zen_output_string($name)) . '"';
+    $field = '<input class="form-control" type="' . zen_output_string($type) . '" name="' . zen_sanitize_string(zen_output_string($name)) . '"';
     if ( (isset($GLOBALS[$name]) && is_string($GLOBALS[$name])) && ($reinsert_value == true) ) {
       $field .= ' value="' . zen_output_string(stripslashes($GLOBALS[$name])) . '"';
     } elseif (zen_not_null($value)) {
@@ -504,7 +504,7 @@ function zen_catalog_href_link($page = '', $parameters = '', $connection = 'NONS
         return $selection;
     }
     
-    $selection = '<input type="' . zen_output_string($type) . '" name="' . zen_output_string($name) . '"';
+    $selection = '<input class="form-control" type="' . zen_output_string($type) . '" name="' . zen_output_string($name) . '"';
 
     if (zen_not_null($value)) $selection .= ' value="' . zen_output_string($value) . '"';
 
@@ -571,7 +571,7 @@ function zen_catalog_href_link($page = '', $parameters = '', $connection = 'NONS
         return $field;
     }
     
-    $field = '<textarea name="' . zen_output_string($name) . '" cols="' . zen_output_string($width) . '" rows="' . zen_output_string($height) . '"';
+    $field = '<textarea class="form-control" name="' . zen_output_string($name) . '" cols="' . zen_output_string($width) . '" rows="' . zen_output_string($height) . '"';
 
     if (zen_not_null($parameters)) $field .= ' ' . $parameters;
 
@@ -607,7 +607,7 @@ function zen_catalog_href_link($page = '', $parameters = '', $connection = 'NONS
  *  Output a form hidden field
  */
   function zen_draw_hidden_field($name, $value = '~*~*#', $parameters = '') {
-    $field = '<input type="hidden" name="' . zen_sanitize_string(zen_output_string($name)) . '"';
+    $field = '<input class="form-control" type="hidden" name="' . zen_sanitize_string(zen_output_string($name)) . '"';
 
     if (zen_not_null($value) && $value != '~*~*#') {
       $field .= ' value="' . zen_output_string($value) . '"';
@@ -668,7 +668,7 @@ function zen_catalog_href_link($page = '', $parameters = '', $connection = 'NONS
         return $field;
     }
     
-    $field = '<select';
+    $field = '<select class="form-control"';
 
     if (!strstr($parameters, 'id=')) $field .= ' id="select-'.zen_output_string($name).'"';
 

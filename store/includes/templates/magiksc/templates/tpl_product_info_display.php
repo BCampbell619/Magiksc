@@ -13,7 +13,8 @@
  */
  //require(DIR_WS_MODULES . '/debug_blocks/product_info_prices.php');
 ?>
-<div class="centerColumn" id="productGeneral">
+<div class="row" id="productGeneral">
+<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 
 <?php
     
@@ -48,26 +49,12 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
 <?php } ?>
 <!--eof Prev/Next top position-->
 
-<!--bof Main Product Image -->
-<?php
-  if (zen_not_null($products_image)) {
-  ?>
-<?php
-/**
- * display the main product image
- */
-   require($template->get_template_dir('/tpl_modules_main_product_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_main_product_image.php'); ?>
-<?php
-  }
-?>
-<!--eof Main Product Image-->
-
 <!--bof Product Name-->
-<h1 id="productName" class="productGeneral"><?php echo $products_name; ?></h1>
+<h1 id="productName" class="display-4 productGeneral"><?php echo $products_name; ?></h1>
 <!--eof Product Name-->
 
 <!--bof Product Price block -->
-<h2 id="productPrices" class="productGeneral">
+<h3 id="productPrices" class="text-muted productGeneral">
 <?php
 // base price
   if ($show_onetime_charges_description == 'true') {
@@ -76,21 +63,8 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
     $one_time = '';
   }
   echo $one_time . ((zen_has_product_attributes_values((int)$_GET['products_id']) and $flag_show_product_info_starting_at == 1) ? TEXT_BASE_PRICE : '') . zen_get_products_display_price((int)$_GET['products_id']);
-?></h2>
+?></h3>
 <!--eof Product Price block -->
-
-<!--bof free ship icon  -->
-<?php if(zen_get_product_is_always_free_shipping($products_id_current) && $flag_show_product_info_free_shipping) { ?>
-<div id="freeShippingIcon"><?php echo TEXT_PRODUCT_FREE_SHIPPING_ICON; ?></div>
-<?php } ?>
-<!--eof free ship icon  -->
-
- <!--bof Product description -->
-<?php if ($products_description != '') { ?>
-<div id="productDescription" class="productGeneral biggerText"><?php echo stripslashes($products_description); ?></div>
-<?php } ?>
-<!--eof Product description -->
-<br class="clearBoth" />
 
 <!--bof Add to Cart Box -->
 <?php
@@ -105,23 +79,53 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
               $the_button = '<input type="hidden" name="cart_quantity" value="1" />' . zen_draw_hidden_field('products_id', (int)$_GET['products_id']) . zen_image_submit(BUTTON_IMAGE_IN_CART, BUTTON_IN_CART_ALT);
             } else {
               // show the quantity box
-    $the_button = PRODUCTS_ORDER_QTY_TEXT . '<input type="text" name="cart_quantity" value="' . $products_get_buy_now_qty . '" maxlength="6" size="4" /><br />' . zen_get_products_quantity_min_units_display((int)$_GET['products_id']) . '<br />' . zen_draw_hidden_field('products_id', (int)$_GET['products_id']) . zen_image_submit(BUTTON_IMAGE_IN_CART, BUTTON_IN_CART_ALT);
+    $the_button = '<label for="cart_quantity">' . PRODUCTS_ORDER_QTY_TEXT . '</label>' . '<input class="form-control col-2" type="text" name="cart_quantity" value="' . $products_get_buy_now_qty . '" maxlength="6" size="4" />&nbsp;&nbsp;' . zen_get_products_quantity_min_units_display((int)$_GET['products_id']) . zen_draw_hidden_field('products_id', (int)$_GET['products_id']) . "<button class=\"btn btn-dark\" title=\" Add to Cart \">Add to Cart</button>" /*zen_image_submit(BUTTON_IMAGE_IN_CART, BUTTON_IN_CART_ALT)*/;
             }
     $display_button = zen_get_buy_now_button($_GET['products_id'], $the_button);
   ?>
   <?php if ($display_qty != '' or $display_button != '') { ?>
-    <div id="cartAdd">
-    <?php
-      echo $display_qty;
-      echo $display_button;
-            ?>
-          </div>
+<div class="row form-inline">
+   <div class=" form-group col-12">
+    <?php echo $display_qty; ?>
+    </div>
+    <div class="form-group text-center col-12">
+    <?php  echo $display_button; ?>
+    </div><!-- end of col-6 add to cart container -->
+</div><!-- end of add to cart row -->
+    <br class="clearBoth" />
   <?php } // display qty and button ?>
 <?php } // CUSTOMERS_APPROVAL == 3 ?>
 <!--eof Add to Cart Box-->
 
+<!--bof Main Product Image -->
+<?php
+  if (zen_not_null($products_image)) {
+  ?>
+<?php
+/**
+ * display the main product image
+ */
+   require($template->get_template_dir('/tpl_modules_main_product_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_main_product_image.php'); ?>
+<?php
+  }
+?>
+<!--eof Main Product Image-->
+
+<!--bof free ship icon  -->
+<?php if(zen_get_product_is_always_free_shipping($products_id_current) && $flag_show_product_info_free_shipping) { ?>
+<div id="freeShippingIcon"><?php echo TEXT_PRODUCT_FREE_SHIPPING_ICON; ?></div>
+<?php } ?>
+<!--eof free ship icon  -->
+
+ <!--bof Product description -->
+<?php if ($products_description != '') { ?>
+<div id="productDescription" class="lead productGeneral biggerText"><?php echo stripslashes($products_description); ?></div>
+<?php } ?>
+<!--eof Product description -->
+<br class="clearBoth" />
+
 <!--bof Product details list  -->
-<?php if ( (($flag_show_product_info_model == 1 and $products_model != '') or ($flag_show_product_info_weight == 1 and $products_weight !=0) or ($flag_show_product_info_quantity == 1) or ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name))) ) { ?>
+<?php /*if ( (($flag_show_product_info_model == 1 and $products_model != '') or ($flag_show_product_info_weight == 1 and $products_weight !=0) or ($flag_show_product_info_quantity == 1) or ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name))) ) { ?>
 <ul id="productDetailsList" class="floatingBox back">
   <?php echo (($flag_show_product_info_model == 1 and $products_model !='') ? '<li>' . TEXT_PRODUCT_MODEL . $products_model . '</li>' : '') . "\n"; ?>
   <?php echo (($flag_show_product_info_weight == 1 and $products_weight !=0) ? '<li>' . TEXT_PRODUCT_WEIGHT .  $products_weight . TEXT_PRODUCT_WEIGHT_UNIT . '</li>'  : '') . "\n"; ?>
@@ -130,7 +134,7 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 </ul>
 <br class="clearBoth" />
 <?php
-  }
+  }*/
 ?>
 <!--eof Product details list -->
 
@@ -180,7 +184,7 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 <!--eof Prev/Next bottom position -->
 
 <!--bof Reviews button and count-->
-<?php
+<?php/*
   if ($flag_show_product_info_reviews == 1) {
     // if more than 0 reviews, then show reviews button; otherwise, show the "write review" button
     if ($reviews->fields['count'] > 0 ) { ?>
@@ -193,7 +197,7 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 <?php
   }
 }
-?>
+*/?>
 <!--eof Reviews button and count -->
 
 
@@ -233,5 +237,6 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 
 <!--bof Form close-->
 </form>
+</div><!-- end of the col-12 div -->
 <!--bof Form close-->
-</div>
+</div><!-- end of the row div -->

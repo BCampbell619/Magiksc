@@ -19,6 +19,7 @@
 </div>
 
 <div class="row">
+<div class="col-12">
 <?php
 if (PRODUCT_LIST_CATEGORIES_IMAGE_STATUS == 'true') {
 // categories_image

@@ -16,9 +16,7 @@ $zco_notifier->notify('NOTIFY_TPL_TABULAR_DISPLAY_START', $current_page_base, $l
 //print_r($list_box_contents);
   $cell_scope = (!isset($cell_scope) || empty($cell_scope)) ? 'col' : $cell_scope;
   $cell_title = (!isset($cell_title) || empty($cell_title)) ? 'list' : $cell_title;
-echo "<pre>";
-print_r($list_box_contents);
-echo "</pre>";
+
 ?>
 
 <div class="row justify-content-start">
