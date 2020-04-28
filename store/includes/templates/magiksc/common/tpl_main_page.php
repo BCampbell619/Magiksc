@@ -82,9 +82,9 @@
     $flag_disable_header = true;
   }
   require($template->get_template_dir('tpl_header.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_header.php');?>
-
-<div class="container-fluid">
-<div class="row no-gutters">
+<!-- =================== Start of page below header ==================== -->
+<div class="container-fluid"> <!-- START OF CONTAINER -->
+<div class="row no-gutters"> <!-- START OF MASTER ROW -->
 
 <?php
 if (COLUMN_LEFT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['customer_id'] == '') || (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_COLUMN_LEFT_OFF == 'true' and ($_SESSION['customers_authorization'] != 0 or $_SESSION['customer_id'] == ''))) {
@@ -94,7 +94,7 @@ if (COLUMN_LEFT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['custome
 if (!isset($flag_disable_left) || !$flag_disable_left) {
 ?>
 
- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+ <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- START OF MASTER COLUMN WRAPPER -->
  <!-- <div id="navColumnOne" class="columnLeft col-xs-12 col-sm-12 col-md-12 col-lg-12" style="width: <?php //echo COLUMN_WIDTH_LEFT; ?>"> -->
 <?php
  /**
@@ -102,6 +102,9 @@ if (!isset($flag_disable_left) || !$flag_disable_left) {
   *
   */
 ?>
+<!-- ======================== Start of body display ========================= -->
+
+<!-- =================== Start of left column navigation ==================== -->
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" >
 <?php require(DIR_WS_MODULES . zen_get_module_directory('column_left.php')); ?>
@@ -109,14 +112,16 @@ if (!isset($flag_disable_left) || !$flag_disable_left) {
 <?php
 }
 ?>
-</div>
+</div><!-- END OF LEFT NAV COLUMN -->
+<!-- =================== end of left column navigation ==================== -->
+<!-- =================== Start of center column ==================== -->
 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
     <!-- <td valign="top"> -->
 <!-- bof  breadcrumb -->
 <?php if (DEFINE_BREADCRUMB_STATUS == '1' || (DEFINE_BREADCRUMB_STATUS == '2' && !$this_is_home_page) ) { ?>
 <div class="row no-gutters">
     <div id="navBreadCrumb" class="col-12"><?php echo $breadcrumb->trail(BREAD_CRUMBS_SEPARATOR); ?></div>
-</div>
+</div> <!-- END OF ROW - NO-GUTTERS (BREADCRUMB) -->
 <?php } ?>
 <!-- eof breadcrumb -->
 
@@ -150,8 +155,13 @@ if (!isset($flag_disable_left) || !$flag_disable_left) {
     }
   }
 ?><!-- </td> -->
-</div> <!-- end of center wrapper -->
-</div>
+</div> <!-- END OF CENTER COLUMN (COL-XS-12 & COL-SM-MD-LG-9) -->
+<!-- =================== end of center column ==================== -->
+
+</div><!-- END OF ROW FOR NAV & CENTER COLUMN -->
+
+<!-- ======================== end of body display ========================= -->
+
 <?php
 //if (COLUMN_RIGHT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['customer_id'] == '') || (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_COLUMN_RIGHT_OFF == 'true' && $_SESSION['customers_authorization'] != 0)) {
 if (COLUMN_RIGHT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['customer_id'] == '') || (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_COLUMN_RIGHT_OFF == 'true' and ($_SESSION['customers_authorization'] != 0 or $_SESSION['customer_id'] == ''))) {
@@ -171,9 +181,9 @@ if (!isset($flag_disable_right) || !$flag_disable_right) {
 <?php
 }
 ?>
-</div><!-- end of all columns 12 -->
-</div><!-- end of contentMainWrapper id -->
-</div><!-- end of container-fluid -->
+</div><!-- END OF MASTER COLUMN WRAPPER -->
+</div><!-- END OF MASTER ROW -->
+</div><!-- END OF CONTAINER -->
 
 <?php
  /**

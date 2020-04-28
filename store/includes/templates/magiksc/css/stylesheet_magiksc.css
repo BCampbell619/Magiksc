@@ -965,6 +965,15 @@ a>img:hover {
     border-right: solid 1px #999;
 }
 
+#test {
+    display: none;
+    width: 100%;
+}
+
+#attribsOptionsText {
+    cursor: pointer;
+}
+
 .mgkFtNav h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;

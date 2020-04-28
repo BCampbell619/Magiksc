@@ -50,7 +50,7 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
 <!--eof Prev/Next top position-->
 
 <!--bof Product Name-->
-<h1 id="productName" class="display-4 productGeneral"><?php echo $products_name; ?></h1>
+<h1 id="productName" class="productGeneral"><?php echo $products_name; ?></h1>
 <!--eof Product Name-->
 
 <!--bof Product Price block -->
@@ -84,14 +84,13 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
     $display_button = zen_get_buy_now_button($_GET['products_id'], $the_button);
   ?>
   <?php if ($display_qty != '' or $display_button != '') { ?>
-<div class="row form-inline">
-   <div class=" form-group col-12">
+<div class="row">
+    <form class="form-inline">
     <?php echo $display_qty; ?>
-    </div>
-    <div class="form-group text-center col-12">
     <?php  echo $display_button; ?>
-    </div><!-- end of col-6 add to cart container -->
+    </form>
 </div><!-- end of add to cart row -->
+    
     <br class="clearBoth" />
   <?php } // display qty and button ?>
 <?php } // CUSTOMERS_APPROVAL == 3 ?>
@@ -138,15 +137,18 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 ?>
 <!--eof Product details list -->
 
-<!--bof Attributes Module -->
+<!--bof Attributes Module pulling here -->
 <?php
+    
   if ($pr_attr->fields['total'] > 0) {
+      
 ?>
 <?php
 /**
  * display the product atributes
  */
   require($template->get_template_dir('/tpl_modules_attributes.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_attributes.php'); ?>
+  
 <?php
   }
 ?>
@@ -203,19 +205,19 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 
 <!--bof Product date added/available-->
 <?php
-  if ($products_date_available > date('Y-m-d H:i:s')) {
-    if ($flag_show_product_info_date_available == 1) {
+  /*if ($products_date_available > date('Y-m-d H:i:s')) {
+    if ($flag_show_product_info_date_available == 1) {*/
 ?>
-  <p id="productDateAvailable" class="productGeneral centeredContent"><?php echo sprintf(TEXT_DATE_AVAILABLE, zen_date_long($products_date_available)); ?></p>
+  <!-- <p id="productDateAvailable" class="productGeneral centeredContent"><?php //echo sprintf(TEXT_DATE_AVAILABLE, zen_date_long($products_date_available)); ?></p> -->
 <?php
-    }
+    /*}
   } else {
-    if ($flag_show_product_info_date_added == 1) {
+    if ($flag_show_product_info_date_added == 1) {*/
 ?>
-      <p id="productDateAdded" class="productGeneral centeredContent"><?php echo sprintf(TEXT_DATE_ADDED, zen_date_long($products_date_added)); ?></p>
+      <!--<p id="productDateAdded" class="productGeneral centeredContent"><?php //echo sprintf(TEXT_DATE_ADDED, zen_date_long($products_date_added)); ?></p>-->
 <?php
-    } // $flag_show_product_info_date_added
-  }
+    /*} // $flag_show_product_info_date_added
+  }*/
 ?>
 <!--eof Product date added/available -->
 

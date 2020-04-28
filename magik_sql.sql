@@ -1,3 +1,18 @@
+/* Custom SQL Queries */
+
+INSERT INTO products_attributes (products_id, options_id, options_values_id, options_values_price, price_prefix, products_options_sort_order, product_attribute_is_free, products_attributes_weight_prefix)
+
+VALUES (648, 23, 679, 0.0000, '+', 10, 1, '+'),
+(536, 23, 679, 0.0000, '+', 10, 1, '+'),
+(533, 23, 679, 0.0000, '+', 10, 1, '+'),
+(531, 23, 679, 0.0000, '+', 10, 1, '+'),
+(535, 23, 679, 0.0000, '+', 10, 1, '+'),
+(532, 23, 679, 0.0000, '+', 10, 1, '+'),
+(537, 23, 679, 0.0000, '+', 10, 1, '+'),
+(534, 23, 679, 0.0000, '+', 10, 1, '+');
+(317, 23, 679, 0.0000, '+', 10, 1, '+'),
+(363, 23, 679, 0.0000, '+', 10, 1, '+');
+
 /* Products Options for Honda */
 
 INSERT INTO `products_options` VALUES(1, 1, 'Main Color', 100, 0, 32, '', 32, 0, 0, 0);

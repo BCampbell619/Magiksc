@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magik Website Documentation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        code {
+            color: #616;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12"><button class="btn btn-secondary"><a href="../index.php" style="color: #FFF; text-decoration: none;">Server Home</a></button></div>
+            <header class="col-12">
+                <h1 class="text-center">The <code>magiksc</code> Template Web Dev Documentation</h1>
+                <p class="text-center lead">This page lists all the &lsquo;details&rsquo; about the web development of the <code>magiksc&#46;com</code> store&#46; <br>It has all the layout, code, and codesheets that are associated with each page&#46; <br>We start with the header and go all the way to the footer&#33;</p>
+            </header>
+        </div>
+        <div class="row">
+            <section class="col-12" id="indexPageDocumentation">
+                <h1>Store Index Page Files</h1>
+                <h2>Header Files</h2>
+                <p>The HTML header file for the store can be found here&#58; <code>store/includes/templates/magiksc/common/html_header.php</code><br>
+                In this file is the <code><!DOCTYPE></code> tag and the <code>&lt;head&gt;&#44; &lt;title&gt;&#44; &lt;meta&gt;&#44; &lt;link&gt;&#44; &amp; &lt;script&gt;</code> tags are found&#46; The Bootstrap CDN and Google Font api is also located in this file&#46; All <code>&#46;css</code> and <code>&#46;js</code> files are loaded in this page&#46;</p>
+                
+                <h2>Body Files</h2>
+                <p>The first body file is found here&#58; <code>store/includes/templates/magiksc/common/tpl_main_page.php</code><br>
+                The opening <code>&lt;body&gt;</code> is found in this file&#44; as well as the <code>&lt;div&gt;</code> with the <i>mainWrapper</i> <code>id</code>&#46; There are a few php included files in this document&#46; They are included in the following order&#58;</p>
+                <ol>
+                    <li><code>tpl_header.php</code></li>
+                    <li><code>column_left.php</code></li>
+                    <li><code>&#36;body_code</code> <i>&#40;This variable is determined in a file found in the file path <code>store/includes/templates/template_default/common/main_template_vars.php</code>&#41;</i></li>
+                    <li><code>column_right.php</code></li>
+                    <li><code>tpl_footer.php</code></li>
+                </ol>
+                <p>Each of these will be reviewed futher&#46;</p>
+                
+                <p>In between <code>column_left.php</code> and <code>&#36;body_code</code> is where the breadcrumb navigations is declared&#46;</p>
+                
+                <h3>tpl_header.php</h3>
+                <p>This file has some base code that displays a default navigation&#44; yet there is a flag that can turn that off&#46; The variable <code>&#36;flag_disable_header</code> is set to <code>true</code> currently for this page&#46; This customer header is wrapped in a <code>&lt;div&gt;</code> with the <i>container&ndash;fluid</i> <code>class</code>&#46; The CURRENT TURNAROUND&#44; CONTACT&#44; ABOUT US&#44; the INSTAGRAM links&#44; &amp; the Magik Graphis logo links are all found in this file&#44; as well&#46;</p>
+                
+                <h3>column_left.php</h3>
+                <p><code>The column_left.php</code> file is found through the following path&#58; <code>store/includes/modules/column_left.php</code> <br><code>column_left.php</code> is more of a function type file&#44; which loads through all of the displayable files that have been approved through configuration&#46; Some of these&#44; for example&#44; are the Categories &amp; Information boxes or files &#46; Whatever you&#39;d like to see or not see through this file needs to be turned off or on through the admin portal&#46; Essentially this loads all the <code>sideboxes</code> files for each page&#46; Currently&#44; the only two boxes that are being displayed are the <code>Categories</code> and Information sideboxes&#46; The only file that has custom scripting is the <code>Categories</code> sidebox&#46; This is found through the following file path&#58; <code>store/includes/templates/magiksc/sideboxes/tpl_categories.php</code>&#46; For the <code>magiksc</code> template the Information file is found through the following file path&#58; <code>store/includes/templates/template_default/sideboxes/tpl_information.php&#46;</code></p>
+                
+                <h4>tpl_categories.php</h4>
+                <p>This file was modified by adding specific <code>id</code> or <code>classes</code> to the <code>&lt;a&gt;</code> tags to apply the template styling needed for the site&#46; <code>lines 13 to 18</code> is used for troubleshooting or viewing the data structure&#44; and <code>lines 22 to 129</code> is the block section that sets the styles to the top nav items and each sub&ndash;item of the product navigation&#46;</p>
+                
+                <h3>&#36;body_code</h3>
+                <p>This is the main page or file that is loaded to the &lsquo;center&rsquo;of the store&#39;s main page&#46; This main page is found through the following file path&#58; <code>store/includes/languages/english/html_includes/magiksc/define_main_page.php</code>&#46;</p>
+                
+                <h3>column_right.php</h3>
+                <p>This column is completely turned off for this template&#46;</p>
+                
+                <h3>tpl_footer.php</h3>
+                
+                <p>Much like the header file&#44; this file has a flag variable &#40;<code>&#36;flag_disable_footer</code>&#41; set to true&#46; Inserted into this file is the custom code to display the custom footer for the site&#46; This footer file can be found through the following file path&#58; <code>store/includes/templates/magiksc/common/tpl_footer.php</code>&#46;</p>
+            </section>
+        </div>
+        <div class="row" id="categoriesPageDocumentation">
+            <section class="col-12">
+                <h1>Categories Page Files</h1>
+                <h2>List of Files</h2>
+                <p>Here are the list of files that make up the Categories page display&#58;</p>
+                
+                <ol>
+                    <li><code>tpl_index_categories.php</code></li>
+                    <li><code>tpl_modules_category_row.php</code></li>
+                </ol>
+                
+                <p>The first is found through the following path&#58; <code>store/includes/templates/magiksc/templates/tpl_index_categories.php</code>&#46; The second file is found through the following path&#58; <code>store/includes/templates/magiksc/templates/tpl_modules_category_row.php</code></p>
+                
+                <h3>tpl_index_categories.php</h3>
+                <p>The returned mark up for this file is encompassed in a <code>row</code> class and a <code>col-12</code> class within it&#46; This file goes through and loads potentially up to 4 sections of the page &ndash; category rows&#44; featured products&#44; specials&#44; &amp; whats new items&#46;</p>
+                
+                <h3>tpl_modules_category_row.php</h3>
+                <p>All this file does is include two additional files that get processed and displayed to the page&#58; <code>category_row.php</code> &amp; <code>tpl_columnar_display.php</code>&#46; The category_row file can be found via&#58; <code>store/includes/templates/module/magiksc/category_row.php</code>&#44; and the other file can be found through &#58; <code>store/includes/templates/magiksc/tpl_columnar_display.php</code>&#46;</p>
+                
+                <h4>category_row.php</h4>
+                <p>This file prepares the format of the output of each of the sub categories for the selected main category &#40;if there are sub categories&#41;&#46; 
+                If any display changes need to be made it should be through this file&#46;</p>
+                
+                <h4>tpl_columnar_display.php</h4>
+                <p>This file actually takes care of the display of the work done by the <code>category_row.php</code> file&#46; It is in this file that each of the sub category items are wrapped in <code>col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4</code> classes&#46;</p>
+                 
+            </section>
+        </div>
+        <div class="row" id="categoriesListDocumentation">
+            <section class="col-12">
+                <h1>Category List Page Files</h1>
+                <h2>List of Files</h2>
+                <p>Here is the list of files that make up the Categories List page display&#58;</p>
+                
+                <ol>
+                    <li><code>tpl_index_product_list.php</code></li>
+                    <li><code>tpl_modules_product_listing.php</code></li>
+                </ol>
+                
+                <p>The first file can be found through this path&#58; <code>store/includes/templates/magiksc/templates/tpl_index_product_list.php</code>&#46; 
+                This file is just like the <code>tpl_index_categories.php</code> file in that it loads the same 4 possible modules&#46; 
+                The second file can be found through this path&#58; <code>store/includes/templates/magiksc/templates/tpl_modules_product_listing.php</code>&#46; 
+                This file requires one document&#44; which is <code>tpl_tabular_display.php</code>&#46;</p>
+                
+                <h4>tpl_tabular_display.php</h4>
+                <p>This file is found via &#58; <code>store/includes/templates/magiksc/common/tpl_tabular_display.php</code>&#46; 
+                This file handles all of the parsing and displaying of each of the items found for a given sub category&#46; 
+                Any changes to the display or arrangement of the items can be done through this file&#46;</p>
+            </section>
+        </div>
+        <div class="row" id="productInfoDocumentation">
+            <section class="col-12">
+                <h1>Product Info Page Files</h1>
+                <h2>List of Files</h2>
+                <p>Here are the files that make up this page&#58;</p>
+                
+                <ol>
+                    <li><code>tpl_product_info_display.php</code></li>
+                    <li><code>tpl_products_next_previous.php</code></li>
+                    <li><code>tpl_modules_main_product_image.php</code></li>
+                    <li><code>tpl_modules_attribues.php</code></li>
+                </ol>
+                
+                <p>Here are the file paths for each of these files&#58;</p>
+                
+                <ol>
+                    <li><code>store/includes/templates/magiksc/templates/tpl_product_info_display.php</code></li>
+                    <li><code>store/includes/templates/magiksc/templates/tpl_products_next_previous.php</code></li>
+                    <li><code>store/includes/templates/magiksc/templates/tpl_modules_main_product_image.php</code></li>
+                    <li><code>store/includes/templates/magiksc/templates/tpl_modules_attribues.php</code></li>
+                </ol>
+                
+                <p>The <code>tpl_product_info_display.php</code> loads the other three files within itself. This file is the master file for this page of the site&#46; <br>
+                The <code>tpl_products_next_previous.php</code> takes care of the style and mark up of the &lsquo;Previous&rsquo;&#44; &lsquo;Next&rsquo;&#44; and &lsquo;Listing&rsquo; buttons at the top of the product&#46; Go to this file to modify the look of these&#46;<br>
+                The <code>tpl_modules_main_product_image.php</code> holds the javascript code that handles the pop out of the main image click&#46; If the behavior of this needs to change&#44; go to this file&#46; <br>
+                The <code>tpl_modules_attribues.php</code> is the parsing/display file for the attributes of a product&#46; An additional file that&#39;s associated with this <code>tpl_modules_attribues.php</code> file is <code>store/includes/modules/magiksc/attribues.php</code>&#46; The <code>attributes.php</code> file is the heavy lifter of parsing all the data that comes from the database regarding attributes&#46; If there are any needed changes for the actual <code>&lt;input&gt;</code> or <code>&lt;label&gt;</code> tags&#44; then this is the file you need&#46;</p>
+                
+            </section>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,3 +1,85 @@
+/* Possible colors (Oranges)  */
+
+.color-primary-0 { color: #F9B904 }	/* Main Primary color */
+.color-primary-1 { color: #FFD765 }
+.color-primary-2 { color: #FFCC3C }
+.color-primary-3 { color: #C28F00 }
+.color-primary-4 { color: #987100 }
+
+.color-secondary-1-0 { color: #F9EE04 }	/* Main Secondary color (1) */
+.color-secondary-1-1 { color: #FFF865 }
+.color-secondary-1-2 { color: #FFF63C }
+.color-secondary-1-3 { color: #C2B900 }
+.color-secondary-1-4 { color: #989200 }
+
+.color-secondary-2-0 { color: #F97A04 }	/* Main Secondary color (2) */
+.color-secondary-2-1 { color: #FFAF65 }
+.color-secondary-2-2 { color: #FF993C }
+.color-secondary-2-3 { color: #C25D00 }
+.color-secondary-2-4 { color: #984900 }
+
+
+
+/* As RGBa codes */
+
+.rgba-primary-0 { color: rgba(249,185,  4,1) }	/* Main Primary color */
+.rgba-primary-1 { color: rgba(255,215,101,1) }
+.rgba-primary-2 { color: rgba(255,204, 60,1) }
+.rgba-primary-3 { color: rgba(194,143,  0,1) }
+.rgba-primary-4 { color: rgba(152,113,  0,1) }
+
+.rgba-secondary-1-0 { color: rgba(249,238,  4,1) }	/* Main Secondary color (1) */
+.rgba-secondary-1-1 { color: rgba(255,248,101,1) }
+.rgba-secondary-1-2 { color: rgba(255,246, 60,1) }
+.rgba-secondary-1-3 { color: rgba(194,185,  0,1) }
+.rgba-secondary-1-4 { color: rgba(152,146,  0,1) }
+
+.rgba-secondary-2-0 { color: rgba(249,122,  4,1) }	/* Main Secondary color (2) */
+.rgba-secondary-2-1 { color: rgba(255,175,101,1) }
+.rgba-secondary-2-2 { color: rgba(255,153, 60,1) }
+.rgba-secondary-2-3 { color: rgba(194, 93,  0,1) }
+.rgba-secondary-2-4 { color: rgba(152, 73,  0,1) }
+
+/* Dark Oranges */
+
+/* As hex codes */
+
+.color-primary-0 { color: #FF540B }	/* Main Primary color */
+.color-primary-1 { color: #FF9568 }
+.color-primary-2 { color: #FF783F }
+.color-primary-3 { color: #CB3D00 }
+.color-primary-4 { color: #A03000 }
+
+
+
+/* As RGBa codes */
+
+.rgba-primary-0 { color: rgba(255, 84, 11,1) }	/* Main Primary color */
+.rgba-primary-1 { color: rgba(255,149,104,1) }
+.rgba-primary-2 { color: rgba(255,120, 63,1) }
+.rgba-primary-3 { color: rgba(203, 61,  0,1) }
+.rgba-primary-4 { color: rgba(160, 48,  0,1) }
+
+/* Blues */
+
+/* As hex codes */
+
+.color-primary-0 { color: #04B6FA }	/* Main Primary color */
+.color-primary-1 { color: #45C4F5 }
+.color-primary-2 { color: #13B9F9 }
+.color-primary-3 { color: #018DC3 }
+.color-primary-4 { color: #01658C }
+
+
+
+/* As RGBa codes */
+
+.rgba-primary-0 { color: rgba(  4,182,250,1) }	/* Main Primary color */
+.rgba-primary-1 { color: rgba( 69,196,245,1) }
+.rgba-primary-2 { color: rgba( 19,185,249,1) }
+.rgba-primary-3 { color: rgba(  1,141,195,1) }
+.rgba-primary-4 { color: rgba(  1,101,140,1) }
+
 header {
     background-image: url(images/MXFullGraphicHero.jpg);
     background-position: center;
@@ -44,6 +126,37 @@ header {
     margin-top: -8px;
     height: 27px;
     width: 19px;
+}
+
+.topNav>ul>li>form {
+    margin-right: 30px;
+    position: relative;
+    top: -4px;
+}
+
+.topNav>ul>li>form>input:nth-of-type(3) {
+    border: none;
+    border-radius: 2px;
+    padding: 0px;
+    width: 0px;
+}
+
+#srchBtn {
+    background-color: rgba(255, 255, 255, 0);
+    border: solid 1px #333;
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    padding: 2px 4px;
+    transition: 0.3s;
+}
+
+#srchBtn:hover {
+    background-color: #999;
+    transition: 0.3s;
+}
+
+#siteSearch{
+    cursor: pointer;
 }
 
 /*========================================================================================*/
@@ -140,8 +253,8 @@ header {
     visibility: hidden;
 }
 
-.drop-MX-hide, 
-.drop-BK-hide {
+.drop-moto-hide, 
+.drop-bike-hide {
 	background-color: #FFF;
     border-radius: 0 0 3px 0;
 	box-shadow: 6px 8px 16px -8px rgba(0, 0, 0, 0.9);
@@ -149,19 +262,19 @@ header {
     height: 0px;
 	margin: 0px;
     overflow: hidden;
-    padding: 0 5px;
+    padding: 0;
     position: absolute;
         top: 50px;
-        left: -160px;
+        left: 0px;
     -webkit-transition: height 0.1s;
     transition: height 0.1s;
-    width: 450px;
+    width: 200px;
 	z-index: 1;
     visibility: visible;
 }
 
-.drop-HT-hide, 
-.drop-UTV-hide {
+.drop-helmet-hide, 
+.drop-utv-hide {
 	background-color: #FFF;
     border-radius: 0 0 3px 0;
 	box-shadow: 6px 8px 16px -8px rgba(0, 0, 0, 0.9);
@@ -179,96 +292,48 @@ header {
     visibility: visible;
 }
 
-.drop-MX-hide>ul:first-of-type,
-.drop-BK-hide>ul:first-of-type {
+/*.drop-moto-hide>ul:first-of-type,
+.drop-bike-hide>ul:first-of-type {
     position: absolute;
     top: 3px;
     left: 100px;
     width: 200px;
 }
 
-.drop-MX-hide>ul:last-of-type,
-.drop-BK-hide>ul:last-of-type {
+.drop-moto-hide>ul:last-of-type,
+.drop-bike-hide>ul:last-of-type {
     border-left: solid 1px rgb(90, 90, 90);
     top: 3px;
     left: 315px;
     width: 230px;
-}
+}*/
 
-.drop-HT-hide ul,
-.drop-BK-hide ul,
-.drop-UTV-hide ul {
+.drop-helmet-hide ul,
+.drop-bike-hide ul,
+.drop-utv-hide ul {
     list-style: none;
     margin: 0;
     padding: 0;
     width: inherit;
 }
 
-.drop-MX-hide ul li, .drop-HT-hide ul li, .drop-BK-hide ul li, .drop-UTV-hide ul li {
+.drop-moto-hide ul li, .drop-helmet-hide ul li, .drop-bike-hide ul li, .drop-utv-hide ul li {
     margin: 0;
-    padding: 2px;
+    padding: 0px;
     width: inherit;
 }
 
-.drop-MX-hide ul li:first-child, .drop-HT-hide ul li:first-child, .drop-BK-hide ul li:first-child, .drop-UTV-hide ul li:first-child {
+.drop-moto-hide ul li:first-child, .drop-helmet-hide ul li:first-child, .drop-bike-hide ul li:first-child, .drop-utv-hide ul li:first-child {
     padding-top: 5px;
 }
 
-.drop-MX-hide ul li a, .drop-HT-hide ul li a, .drop-BK-hide ul li a, .drop-UTV-hide ul li a {
+.drop-moto-hide ul li a, .drop-helmet-hide ul li a, .drop-bike-hide ul li a, .drop-utv-hide ul li a {
 	background-color: #FFF;
 	color: #000;
 	display: block;
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
-	padding: 4px 0 4px 5px;
-	text-decoration: none;
-    width: inherit;
-}
-
-/*--------------------------- OtherProducts Hide ---------------------------*/
-
-.drop-OT-hide {
-	background-color: #FFF;
-    border-radius: 0 0 3px 3px;
-	box-shadow: 6px 8px 16px -8px rgba(0, 0, 0, 0.9);
-    font-family: 'Roboto', sans-serif;
-    height: 0px;
-	margin: 0px;
-    overflow: hidden;
-    padding: 0 5px;
-    position: absolute;
-        top: 50px;
-    -webkit-transition: height 0.7s;
-    transition: height 0.7s;
-    width: 220px;
-	z-index: 1;
-    visibility: visible;
-}
-
-.drop-OT-hide ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: inherit;
-}
-
-.drop-OT-hide ul li {
-    margin: 0;
-    padding: 2px;
-    width: inherit;
-}
-
-.drop-OT-hide ul li:first-child {
-    padding-top: 5px;
-}
-
-.drop-OT-hide ul li a {
-	background-color: #FFF;
-	color: #000;
-	display: block;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200;
-	padding: 4px 0 4px 5px;
+	padding: 4px 0 4px 2px;
 	text-decoration: none;
     width: inherit;
 }
@@ -286,33 +351,33 @@ header {
 	position: relative;
 }
 
-.drop-MX-show, 
-.drop-BK-show {
+.drop-moto-show, 
+.drop-bike-show {
 	background-color: #FFF;
     border-radius: 0 0 3px 3px;
 	box-shadow: 6px 8px 16px -8px rgba(0, 0, 0, 0.9);
     font-family: 'Roboto', sans-serif;
-    height: 165px;
+    height: 0px;
 	margin: 0;
     overflow-x: scroll;
     padding: 0;
     position: absolute;
         top: 50px;
-        left: -160px;
+        left: 0px;
     -webkit-transition: height 0.7s;
     transition: height 0.7s;
-    width: 440px;
+    width: 220px;
 	z-index: 1;
     visibility: visible;
 }
 
-.drop-HT-show, 
-.drop-UTV-show {
+.drop-helmet-show, 
+.drop-utv-show {
 	background-color: #FFF;
     border-radius: 0 0 3px 3px;
 	box-shadow: 6px 8px 16px -8px rgba(0, 0, 0, 0.9);
     font-family: 'Roboto', sans-serif;
-    height: 320px;
+    height: 0px;
 	margin: 0;
     overflow-x: scroll;
     padding: 0;
@@ -325,32 +390,34 @@ header {
     visibility: visible;
 }
 
-.drop-MX-show>ul:first-of-type,
-.drop-BK-show>ul:first-of-type {
+/*.drop-moto-show>ul:first-of-type,
+.drop-bike-show>ul:first-of-type {
     position: absolute;
     top: 3px;
     left: 95px;
     width: 200px;
 }
 
-.drop-MX-show>ul:last-of-type,
-.drop-BK-show>ul:last-of-type {
+.drop-moto-show>ul:last-of-type,
+.drop-bike-show>ul:last-of-type {
     border-left: solid 1px rgb(90, 90, 90);
     top: 3px;
     left: 320px;
     width: 230px;
-}
+}*/
 
-.drop-HT-show {
+/*.drop-helmet-show {
     height: 160px;
 }
 
-.drop-UTV-show {
+.drop-utv-show {
     height: 120px;
-}
+}*/
 
-.drop-HT-show ul, 
-.drop-UTV-show ul {
+.drop-moto-show>ul,
+.drop-bike-show>ul,
+.drop-helmet-show>ul, 
+.drop-utv-show>ul {
     display: block;
     list-style: none;
     margin: 0;
@@ -358,13 +425,13 @@ header {
     width: inherit;
 }
 
-.drop-MX-show ul li, .drop-HT-show ul li, .drop-BK-show ul li, .drop-UTV-show ul li {
+.drop-moto-show>ul>li, .drop-helmet-show>ul>li, .drop-bike-show>ul>li, .drop-utv-show>ul>li {
     margin: 0;
-    padding: 2px;
+    padding: 0px;
     width: inherit;
 }
 
-.drop-MX-show ul li a, .drop-HT-show ul li a, .drop-BK-show ul li a, .drop-UTV-show ul li a {
+.drop-moto-show>ul>li>a, .drop-helmet-show>ul>li>a, .drop-bike-show>ul>li>a, .drop-utv-show>ul>li>a {
 	background-color: #FFF;
 	color: #000;
 	display: block;
@@ -372,67 +439,15 @@ header {
     font-weight: 200;
 	padding: 4px 0 4px 5px;
 	text-decoration: none; 
+    width: 100%;
 }
 
-.drop-MX-show ul li a:hover, .drop-HT-show ul li a:hover, .drop-BK-show ul li a:hover, .drop-UTV-show ul li a:hover {
+.drop-moto-show>ul>li>a:hover, .drop-helmet-show>ul>li>a:hover, .drop-bike-show>ul>li>a:hover, .drop-utv-show>ul>li>a:hover {
 	background-color: #EEE;
 	color: #000;
 }
 
-.drop-MX-show ul li:first-child, .drop-HT-show ul li:first-child, .drop-BK-show ul li:first-child, .drop-UTV-show ul li:first-child {
-    padding-top: 5px;
-}
-
-/*--------------------------- OtherProducts Show ---------------------------*/
-
-.drop-OT-show {
-	background-color: #FFF;
-    border-radius: 0 0 3px 3px;
-	box-shadow: 6px 8px 16px -8px rgba(0, 0, 0, 0.9);
-    font-family: 'Roboto', sans-serif;
-    height: 160px;
-	margin: 0px;
-    overflow: hidden;
-    padding: 0 5px 0;
-    position: absolute;
-        top: 50px;
-    -webkit-transition: height 0.7s;
-    transition: height 0.7s;
-    width: 220px;
-	z-index: 1;
-    visibility: visible;
-}
-
-.drop-OT-show ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: inherit;
-}
-
-.drop-OT-show ul li {
-    margin: 0;
-    padding: 2px;
-    width: inherit;
-}
-
-.drop-OT-show ul li a {
-	background-color: #FFF;
-	color: #000;
-	display: block;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200;
-	padding: 4px 0 4px 5px;
-	text-decoration: none;
-    width: inherit;
-}
-
-.drop-OT-show ul li a:hover {
-	background-color: #EEE;
-	color: #000;
-}
-
-.drop-OT-show ul li:first-child {
+.drop-moto-show>ul>li:first-child, .drop-helmet-show>ul>li:first-child, .drop-bike-show>ul>li:first-child, .drop-utv-show>ul>li:first-child {
     padding-top: 5px;
 }
 
@@ -498,69 +513,71 @@ header {
         text-decoration: none;
     }
     
-    .drop-MX-hide>ul:first-of-type, 
-    .drop-BK-hide>ul:first-of-type {
+/*    .drop-moto-hide>ul:first-of-type, 
+    .drop-bike-hide>ul:first-of-type {
         left: 115px;
     }
     
-    .drop-MX-hide>ul:last-of-type, 
-    .drop-BK-hide>ul:last-of-type {
+    .drop-moto-hide>ul:last-of-type, 
+    .drop-bike-hide>ul:last-of-type {
         left: 345px;
-    }
+    }*/
     
-    .drop-HT-hide ul, 
-    .drop-UTV-hide ul {
+    .drop-moto-show>ul,
+    .drop-bike-show>ul,
+    .drop-helmet-hide ul, 
+    .drop-utv-hide ul {
         margin: inherit;
         padding: 0;
         width: inherit;
     }
-    .drop-MX-hide ul li,
-    .drop-HT-hide ul li,
-    .drop-BK-hide ul li,
-    .drop-UTV-hide ul li {
+    .drop-moto-hide ul li,
+    .drop-helmet-hide ul li,
+    .drop-bike-hide ul li,
+    .drop-utv-hide ul li {
         margin: inherit;
         padding: 2px;
         width: inherit;
     }
-    .drop-MX-hide ul li a,
-    .drop-HT-hide ul li a,
-    .drop-BK-hide ul li a,
-    .drop-UTV-hide ul li a {
+    .drop-moto-hide ul li a,
+    .drop-helmet-hide ul li a,
+    .drop-bike-hide ul li a,
+    .drop-utv-hide ul li a {
         color: #333;
         margin: inherit;
         padding: 4px 0 4px 5px;
         width: inherit;
     }
     
-    .drop-MX-show>ul:first-of-type, 
-    .drop-BK-show>ul:first-of-type {
+/*    .drop-moto-show>ul:first-of-type, 
+    .drop-bike-show>ul:first-of-type {
         left: 115px;
     }
     
-    .drop-MX-show>ul:last-of-type, 
-    .drop-BK-show>ul:last-of-type {
+    .drop-moto-show>ul:last-of-type, 
+    .drop-bike-show>ul:last-of-type {
         left: 345px;
-    }
+    }*/
     
     
-    .drop-HT-show ul,
-    .drop-UTV-show ul {
+    .drop-helmet-show ul,
+    .drop-utv-show ul {
         margin: inherit;
         padding: 0;
         width: inherit;
     }
-    .drop-MX-show ul li,
-    .drop-HT-show ul li,
-    .drop-BK-show ul li,
-    .drop-UTV-show ul li {
+    .drop-moto-show ul li,
+    .drop-helmet-show ul li,
+    .drop-bike-show ul li,
+    .drop-utv-show ul li {
         margin: inherit;
-        padding: 2px;
+        padding: 0px;
         width: inherit;
     }
-    .drop-MX-show ul li a,
-    .drop-HT-show ul li a,
-    .drop-BK-show ul li a,
-    .drop-UTV-show ul li a {
+    .drop-moto-show ul li a,
+    .drop-helmet-show ul li a,
+    .drop-bike-show ul li a,
+    .drop-utv-show ul li a {
         color: #333;
         margin: inherit;
         padding: 4px 0 4px 5px;
@@ -679,19 +696,20 @@ header {
         display: none;
     }
     
-    .navCollapse ul {
+    .navCollapse>.row>#navColMain>ul, .navCollapse>.row>#navColFt>ul {
         list-style: none;
         margin: 0;
     }
     
-    .navCollapse ul li {
+    .navCollapse>.row>#navColMain>ul>li, .navCollapse>.row>#navColFt>ul>li {
         display: block;
         margin: 0;
         padding-top: 7px;
     }
     
-    .navCollapse ul li a {
+    .navCollapse>.row>#navColMain>ul>li>a, .navCollapse>.row>#navColFt>ul>li>a {
         color: #333;
+        display: block;
         font-family: 'Roboto', sans-serif;
         font-size: 18px;
         font-weight: 200;
@@ -701,7 +719,7 @@ header {
         text-decoration: none;
     }
     
-    .navCollapse ul li a img {
+    .navCollapse>.row>#navColMain>ul>li>a>img {
         margin-top: -8px;
     }
     
@@ -826,8 +844,17 @@ header {
     text-transform: uppercase;
 }
 
-.smBox1:hover, .smBox2:hover {
+.smBox2 {
+    background-size: 85%;
+}
+
+.smBox1:hover {
     background-size: 71%;
+    transition: background-size 0.6s ease;
+}
+
+.smBox2:hover {
+    background-size: 90%;
     transition: background-size 0.6s ease;
 }
 
@@ -855,7 +882,7 @@ header {
 }
 
 .smBox2 {
-    background-image: url(images/number_kit.jpg);
+    background-image: url(images/offroad_index_image.jpg);
 }
 
 .xsBox {
@@ -894,6 +921,46 @@ header {
     text-decoration: none;
 }
 
+.riderSupportBody, .riderApplication {
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    position: relative;
+    top: 80px;
+    width: 70%;
+}
+
+.riderSupportBody>h2, .riderApplication>h2 {
+    color: #FF540B;
+}
+
+.riderApplication>form>h4 {
+    color: #018DC3;
+}
+
+.riderSupportBody>p:first-of-type {
+    background-color: #eee;
+    font-size: 24px;
+    padding: 8px;
+}
+
+.riderSupportBody>p {
+    color: #333;
+    font-size: 18px;
+}
+
+.riderSupportBody>h4 {
+    color: #018DC3;
+    padding: 12px 0;
+}
+
+.riderSupportBody>ul {
+    list-style: circle;
+}
+
+.riderSupportBody>ol>li, .riderSupportBody>ul>li {
+    padding: 8px 0;
+}
+
 /*========================================================================================*/
 /*                                     ~~Product Boxes~~                                  */
 /*========================================================================================*/
@@ -908,8 +975,8 @@ header {
         border: none;
         border-bottom: solid 1px #eee;
         background-position: center;
-        background-size: contain;
         background-repeat: no-repeat;
+        background-size: 100%;
         margin: 5px;
     }
     
@@ -924,13 +991,18 @@ header {
     }
     
     .smBox1, .smBox2 {
-        height: 174px;
+        background-size: 85%;
+        height: 351px;
         border: none;
         border-bottom: solid 1px #eee;
         font-family: 'Roboto', sans-serif;
         margin: 5px;
         padding: 0px;
         text-transform: uppercase;
+    }
+    
+    .smBox2 {
+        background-size: 100%;
     }
     
     .smBox1 p, .smBox2 p {
@@ -944,20 +1016,41 @@ header {
         text-transform: uppercase;
     }
     
+    .smBox2 p {
+        color: #FFF;
+    }
+    
+    .smBox2:hover p {
+        color: #FFF;
+    }
+    
+    .xsBox {
+        background-size: 85%;
+        height: 351px;
+    }
+    
     .xsBox p {
         text-align: left;
     }
     
     .bigBoxProd:hover {
-        background-position: center;
+        background-size: 100%;
     }
     
-    .smBox1:hover, .smBox2:hover {
-        background-position: center;
+    .smBox1:hover {
+        background-size: 85%;
+    }
+    
+    .smBox2:hover {
+        background-size: 100%;
     }
     
     .xsBox:hover {
-        background-position: center;
+        background-size: 85%;
+    }
+    
+    .riderSupportBody, .riderApplication {
+        width: 100%;
     }
 }
 

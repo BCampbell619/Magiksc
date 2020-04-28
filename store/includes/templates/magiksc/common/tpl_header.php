@@ -105,14 +105,24 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
 </div>
 <?php } ?>
 
-<!--  Start of custom header  -->
+<!--  START OF CUSTOM HEADER  -->
 
+<?php
+
+mysql_connect("magiksc.db.3266225.hostedresource.com", "magiksc", "Ss790955") or die(mysql_error());
+mysql_select_db("magiksc") or die(mysql_error());
+
+$result = mysql_query("SELECT * FROM turnaround") or die(mysql_error()); 
+		while($row = mysql_fetch_array( $result )) {
+			$turnaround = $row['turnaround'];
+		}		
+?>
 
 <div class="container-fluid">
 <div class="row no-gutters">
     <div class="col-12 topNav">
         <ul>
-           <li style="float: left;">CURRENT TURNAROUND&#58; <strong>ABOUT 4 DAYS</strong> </li>
+           <li style="float: left;">CURRENT TURNAROUND&#58; <strong>ABOUT <?php echo $turnaround; ?> DAYS</strong> </li>
             <li><div class="addthis_toolbox addthis_default_style"><a class="addthis_button_instagram_follow" addthis:userid="magiksc"><img src="includes/templates/magiksc/images/instagram.png" alt="Instagram icon" title="Follow Magiksc"></a></div></li>
             <li><a href="http://www.magiksc.com/about.html">ABOUT US</a></li>
             <li><a href="http://www.magiksc.com/contactus.html">CONTACT</a></li>
@@ -122,124 +132,9 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
 <nav class="col-12 mgkNav">
 
     <a class="logo" href="http://www.thecampbellscorner.com/magiksc/index.php"><img src="includes/templates/magiksc/images/logo.png" alt="Magik Logo"></a>
-    
-    <!--<button class="navToggle" data-target="MobileList">
-    </button>
-
-    <div class="Collapsed" id="list">
-      <ul>
-          <li class="dropdown" id="MXList">
-              <a href="#">MOTO <img src="includes/templates/magiksc/images/chevronDownBlack.png" alt="Carat" id="arrDown" width="10" height="12"></a>
-                <div class="drop-MX-hide" id="ProdOptions">          
-                    <ul>
-                        <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">FULL BIKE KITS</a></li>
-                        <li><a href="http://www.magiksc.com/store/number-plates-c-30.html">NUMBER PLATES</a></li>
-                        <li><a href="http://www.magiksc.com/store/trim-and-individual-decals-c-48.html">INDIVIUAL GRAPHICS</a></li>
-                        <li><a href="http://www.magiksc.com/store/rider-id-c-1.html">RIDER I&#46;D&#46;</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="http://www.magiksc.com/store/seat-covers-c-44.html">SEAT COVERS</a></li>
-                        <li><a href="http://www.magiksc.com/store/moto-stands-c-22.html">STAND &amp; TOOL BOX KITS</a></li>
-                        <li><a href="http://www.magiksc.com/store/pop-up-tents-c-58.html">POP UP CANOPY</a></li>
-                        <li><a href="http://www.magiksc.com/store/apparel-c-3.html">MOTO ACCESSORIES</a></li>
-                    </ul>
-                </div>
-          </li>
-          <li class="dropdown" id="HelmetNav">
-              <a href="#">HELMETS <img src="includes/templates/magiksc/images/chevronDownBlack.png" alt="Carat" id="arrDown" width="10" height="12"></a>
-                  <div class="drop-HT-hide" id="HelmetOptions">          
-                    <ul>
-                        <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">HELMET WRAP</a></li>
-                        <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">HELMET ID KITS</a></li>
-                        <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">HALF SHELL HELMETS</a></li>
-                        <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">FULL FACE HELMETS</a></li>
-                    </ul>
-              </div>
-          </li>
-         <!-- <li class="dropdown" id="BikeNav">
-              <a href="#">BIKE <img src="includes/templates/magiksc/images/chevronDownBlack.png" alt="Carat" id="arrDown" width="10" height="12"></a>
-                  <div class="drop-BK-hide" id="BikeOptions">          
-                    <ul>
-                        <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">CUSTOM FENDERS</a></li>
-                        <li><a href="http://www.magiksc.com/store/number-plates-c-30.html">FORK DECALS</a></li>
-                        <li><a href="http://www.magiksc.com/store/trim-and-individual-decals-c-48.html">PROTECTION SHEETS</a></li>
-                        <li><a href="http://www.magiksc.com/store/rider-id-c-1.html">BOX NUMBER PLATE</a></li>
-                        
-                    </ul>
-                    <ul>
-                        <li><a href="http://www.magiksc.com/store/seat-covers-c-44.html">RIM DECAL SETS</a></li>
-                        <li><a href="http://www.magiksc.com/store/moto-stands-c-22.html">HALF SHELL HELMETS</a></li>
-                        <li><a href="http://www.magiksc.com/store/pop-up-tents-c-58.html">FULL FACE HELMETS</a></li>
-                        <li><a href="http://www.magiksc.com/store/apparel-c-3.html">BIKE ACCESSORIES</a></li>
-                    </ul>
-                </div>
-          </li> -->
-          <!--<li class="dropdown" id="OffRdNav">
-              <a href="#">OFF-ROAD <img src="includes/templates/magiksc/images/chevronDownBlack.png" alt="Carat" id="arrDown" width="10" height="12"></a>
-                  <div class="drop-UTV-hide" id="UTVOptions">          
-                    <ul>
-                        <li><a href="http://www.magiksc.com/store/utv-graphic-kits-c-64.html">UTV GRAPHIC KITS</a></li>
-                        <li><a href="http://www.magiksc.com/store/magik-banners-stickers-c-57.html">PIT ESSENTIALS</a></li>
-                        <li><a href="http://www.magiksc.com/store/pop-up-tents-c-58.html">POP UP CANOPY</a></li>
-                    </ul>
-                </div>
-          </li>
-
-      </ul>
-    </div>  -->
-</nav>
+    </nav>
 </div>
 </div>
-<!-- <div class="navCollapse" id="MobileList">
-    <div class="row" >
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="navColMain">
-           <h5>MOTO</h5>
-            <ul>
-                <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">FULL BIKE KITS</a></li>
-                <li><a href="http://www.magiksc.com/store/number-plates-c-30.html">NUMBER PLATES</a></li>
-                <li><a href="http://www.magiksc.com/store/trim-and-individual-decals-c-48.html">INDIVIUAL GRAPHICS</a></li>
-                <li><a href="http://www.magiksc.com/store/rider-id-c-1.html">RIDER I&#46;D&#46;</a></li>
-                <li><a href="http://www.magiksc.com/store/seat-covers-c-44.html">SEAT COVERS</a></li>
-                <li><a href="http://www.magiksc.com/store/moto-stands-c-22.html">STAND &amp; TOOL BOX KITS</a></li>
-                <li><a href="http://www.magiksc.com/store/pop-up-tents-c-58.html">POP UP CANOPY</a></li>
-                <li><a href="http://www.magiksc.com/store/apparel-c-3.html">MOTO ACCESSORIES</a></li>
-            </ul>
-            <h5>HELEMTS</h5>
-            <ul>
-                <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">HELMET WRAP</a></li>
-                <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">HELMET ID KITS</a></li>
-                <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">HALF SHELL HELMETS</a></li>
-                <li><a href="http://www.magiksc.com/store/helmet-graphic-kits-c-56.html">FULL FACE HELMETS</a></li>
-            </ul>
-            <!--<h5>BIKE</h5>
-            <ul>
-                <li><a href="http://www.magiksc.com/store/magik-sc-graphics-c-29.html">MTB CUSTOM FENDERS</a></li>
-                <li><a href="http://www.magiksc.com/store/number-plates-c-30.html">FORK DECALS</a></li>
-                <li><a href="http://www.magiksc.com/store/trim-and-individual-decals-c-48.html">PROTECTION SHEETS</a></li>
-                <li><a href="http://www.magiksc.com/store/rider-id-c-1.html">BOX NUMBER PLATE</a></li>
-                <li><a href="http://www.magiksc.com/store/seat-covers-c-44.html">RIM DECAL SETS</a></li>
-                <li><a href="http://www.magiksc.com/store/moto-stands-c-22.html">HALF SHELL HELMETS</a></li>
-                <li><a href="http://www.magiksc.com/store/pop-up-tents-c-58.html">FULL FACE HELMETS</a></li>
-                <li><a href="http://www.magiksc.com/store/apparel-c-3.html">BIKE ACCESSORIES</a></li>
-            </ul>-->
-            <!--<h5>OFF-ROAD</h5>
-            <ul>
-                <li><a href="http://www.magiksc.com/store/utv-graphic-kits-c-64.html">UTV GRAPHIC KITS</a></li>
-                <li><a href="http://www.magiksc.com/store/magik-banners-stickers-c-57.html">PIT ESSENTIALS</a></li>
-                <li><a href="http://www.magiksc.com/store/pop-up-tents-c-58.html">POP UP CANOPY</a></li>
-            </ul>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="navColFt">
-           <h5>CONTACT US</h5>
-            <ul>
-                <li><a href="http://www.magiksc.com/contactus.html">CONTACT</a></li>
-                <li><a href="http://www.magiksc.com/about.html">ABOUT US</a></li>
-                <li><div class="addthis_toolbox addthis_default_style"><a class="addthis_button_instagram_follow" addthis:userid="magiksc"><img src="images/instagram.png" alt="Instagram icon" title="Follow Magiksc"></a></div></li>
-            </ul>
-            <h5>CURRENT TURNAROUND&#58; <strong>ABOUT 4 DAYS</strong></h5>
-        </div>
-    </div>
-</div> -->
 
 
-<!--   End of custom header   -->
+<!--   END OF CUSTOM HEADER   -->

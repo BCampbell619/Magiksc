@@ -16,8 +16,8 @@
 */
 
 ?>
-<div class="row justify-content-md-center">
-<div class="col-3" style="margin: 15px 0;">
+<div class="row justify-content-center">
+<div class="col-xs-8 col-sm-8 col-md-6 col-lg-4 col-xl-4" style="margin: 15px 0;">
 <?php
 // only display when more than 1
   if ($products_found_count > 1) {
@@ -32,5 +32,5 @@
 <?php
   }
 ?>
-</div><!-- end of col-3 -->
+</div><!-- end of col-4 -->
 </div><!-- end of row for next/previous -->

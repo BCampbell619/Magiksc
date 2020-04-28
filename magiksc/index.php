@@ -19,7 +19,7 @@
                     <a href="http://www.magiksc.com/store/utv-graphic-kits-c-64.html"><div class="smBox2 col-md-12"><div><p>Off-Road</p></div></div></a>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-2">
-                    <a href="#"><div class="xsBox col-md-12"><div><p>Bike</p></div></div></a>
+                    <a href="http://www.magiksc.com/store/bike-c-65.html"><div class="xsBox col-md-12"><div><p>Bike</p></div></div></a>
                 </div>
         </div>
     </div>
