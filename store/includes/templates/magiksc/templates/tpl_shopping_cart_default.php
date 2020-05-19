@@ -12,7 +12,10 @@
  * @version $Id: tpl_shopping_cart_default.php 15881 2010-04-11 16:32:39Z wilt $
  */
 ?>
-<div class="centerColumn" id="shoppingCartDefault">
+
+<!-- =================== Start of Shopping Cart ==================== -->
+
+<div class="row" id="shoppingCartDefault">
 <?php
   if ($flagHasCartContents) {
 ?>
@@ -25,118 +28,151 @@
 <?php
   }
 ?>
-
-<h1 id="cartDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
+<div class="col-12">
+    <h1 id="cartDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
+</div>
 
 <?php if ($messageStack->size('shopping_cart') > 0) echo $messageStack->output('shopping_cart'); ?>
-
+<div class="col-12">
 <?php echo zen_draw_form('cart_quantity', zen_href_link(FILENAME_SHOPPING_CART, 'action=update_product', $request_type)); ?>
-<div id="cartInstructionsDisplay" class="content"><?php echo TEXT_INFORMATION; ?></div>
-
+<div class="row no-gutters">
+    <div class="col-12">
+        <div id="cartInstructionsDisplay" class="content"><?php echo TEXT_INFORMATION; ?></div>
+    </div>
 <?php if (!empty($totalsDisplay)) { ?>
-  <div class="cartTotalsDisplay important"><?php echo $totalsDisplay; ?></div>
-  <br class="clearBoth" />
+    <div class="col-12">
+        <div class="cartTotalsDisplay important"><?php echo $totalsDisplay; ?></div>
+    </div>
 <?php } ?>
 
 <?php  if ($flagAnyOutOfStock) { ?>
 
 <?php    if (STOCK_ALLOW_CHECKOUT == 'true') {  ?>
-
-<div class="messageStackError"><?php echo OUT_OF_STOCK_CAN_CHECKOUT; ?></div>
+    <div class="co-12">
+        <div class="messageStackError"><?php echo OUT_OF_STOCK_CAN_CHECKOUT; ?></div>
+    </div>
 
 <?php    } else { ?>
-<div class="messageStackError"><?php echo OUT_OF_STOCK_CANT_CHECKOUT; ?></div>
+    <div class="col-12">
+        <div class="messageStackError"><?php echo OUT_OF_STOCK_CANT_CHECKOUT; ?></div>
+    </div>
 
 <?php    } //endif STOCK_ALLOW_CHECKOUT ?>
 <?php  } //endif flagAnyOutOfStock ?>
+</div><!-- END OF 1ST ROW NO-GUTTERS INSIDE FORM -->
 
-<table  border="0" width="100%" cellspacing="0" cellpadding="0" id="cartContentsDisplay">
-     <tr class="tableHeading">
-        <th scope="col" id="scQuantityHeading"><?php echo TABLE_HEADING_QUANTITY; ?></th>
-        <th scope="col" id="scUpdateQuantity">&nbsp;</th>
-        <th scope="col" id="scProductsHeading"><?php echo TABLE_HEADING_PRODUCTS; ?></th>
-        <th scope="col" id="scUnitHeading"><?php echo TABLE_HEADING_PRICE; ?></th>
-        <th scope="col" id="scTotalHeading"><?php echo TABLE_HEADING_TOTAL; ?></th>
-        <th scope="col" id="scRemoveHeading">&nbsp;</th>
-     </tr>
-         <!-- Loop through all products /-->
-<?php
-  foreach ($productArray as $product) {
-?>
-     <tr class="<?php echo $product['rowClass']; ?>">
-       <td class="cartQuantity">
-<?php
-  if ($product['flagShowFixedQuantity']) {
-    echo $product['showFixedQuantityAmount'] . '<br /><span class="alert bold">' . $product['flagStockCheck'] . '</span><br /><br />' . $product['showMinUnits'];
-  } else {
-    echo $product['quantityField'] . '<br /><span class="alert bold">' . $product['flagStockCheck'] . '</span><br /><br />' . $product['showMinUnits'];
-  }
-?>
-       </td>
-       <td class="cartQuantityUpdate">
-<?php
-  if ($product['buttonUpdate'] == '') {
-    echo '' ;
-  } else {
-    echo $product['buttonUpdate'];
-  }
-?>
-       </td>
-       <td class="cartProductDisplay">
-<a href="<?php echo $product['linkProductsName']; ?>"><span id="cartImage" class="back"><?php echo $product['productsImage']; ?></span><span id="cartProdTitle"><?php echo $product['productsName'] . '<span class="alert bold">' . $product['flagStockCheck'] . '</span>'; ?></span></a>
-<br class="clearBoth" />
-
-
-<?php
-  echo $product['attributeHiddenField'];
-  if (isset($product['attributes']) && is_array($product['attributes'])) {
-  echo '<div class="cartAttribsList">';
-  echo '<ul>';
-    reset($product['attributes']);
-    foreach ($product['attributes'] as $option => $value) {
-?>
-
-<li><?php echo $value['products_options_name'] . TEXT_OPTION_DIVIDER . nl2br($value['products_options_values_name']); ?></li>
-
-<?php
-    }
-  echo '</ul>';
-  echo '</div>';
-  }
-?>
-       </td>
-       <td class="cartUnitDisplay"><?php echo $product['productsPriceEach']; ?></td>
-       <td class="cartTotalDisplay"><?php echo $product['productsPrice']; ?></td>
-       <td class="cartRemoveItemDisplay">
-<?php
-  if ($product['buttonDelete']) {
-?>
-           <a href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, 'action=remove_product&product_id=' . $product['id']); ?>"><?php echo zen_image($template->get_template_dir(ICON_IMAGE_TRASH, DIR_WS_TEMPLATE, $current_page_base,'images/icons'). '/' . ICON_IMAGE_TRASH, ICON_TRASH_ALT); ?></a>
-<?php
-  }
-  if ($product['checkBoxDelete'] ) {
-    echo zen_draw_checkbox_field('cart_delete[]', $product['id']);
-  }
-?>
-</td>
-     </tr>
-<?php
-  } // end foreach ($productArray as $product)
-?>
-       <!-- Finished loop through all products /-->
-      </table>
-
-<div id="cartSubTotal"><?php echo SUB_TITLE_SUB_TOTAL; ?> <?php echo $cartShowTotal; ?></div>
-<br class="clearBoth" />
+<div class="row no-gutters">
+    
+    <?php foreach($productArray as $product) {?>
+    
+    <div class="col-xs-12 col-sm-12 col-md-4 text-center mt-2">
+        <?php echo $product['productsImage']; ?>
+        <p class="text-center"><?php echo $product['productsName']; ?></p>
+    </div>
+    
+    <div class="col-xs-12 col-sm-12 col-md-4 mt-2">
+        
+        <?php
+            echo $product['attributeHiddenField'];
+            if (isset($product['attributes']) && is_array($product['attributes'])) {
+                echo '<ul>';
+                reset($product['attributes']);
+                foreach ($product['attributes'] as $option => $value) {
+        ?>
+        
+        <li><?php echo $value['products_options_name'] . TEXT_OPTION_DIVIDER . nl2br($value['products_options_values_name']); ?></li>
+        
+        <?php
+                }
+                
+                echo '</ul>';
+            } else { ?>
+                
+        <p class="text-center">No Product Attributes</p>    
+                
+        <?php
+            
+            }
+            
+        ?>
+        
+    </div>
+    
+    <div class="col-xs-12 col-sm-12 col-md-4 mt-2">
+        
+        <div class="row no-gutters">
+            <div class="col-2 mx-1">
+                <?php
+                    if ($product['flagShowFixedQuantity']) {
+                        echo $product['showFixedQuantityAmount'] . '<span class="alert bold">' . $product['flagStockCheck'] . '</span>' . $product['showMinUnits'];
+                    } else {
+                        echo $product['quantityField'] . '<span class="alert bold">' . $product['flagStockCheck'] . '</span>' . $product['showMinUnits'];
+                    }
+                ?>
+            </div>
+            <div class="col-9 mx-1 mt-1">
+               
+               <?php
+                    if ($product['buttonUpdate'] == '') {
+                        echo '' ;
+                    } else {
+                        echo $product['buttonUpdate'];
+                    }
+                ?>
+                
+            </div>
+            <div class="col-12 mt-2">
+                
+                <p class="mt-1"><strong>Unit Price:</strong> <span class="ml-3"><?php echo $product['productsPriceEach']; ?></span> </p>
+                <p class="mt-1"><strong>Total:</strong> <span class="ml-3"></span> <?php echo $product['productsPrice']; ?></p>
+                <?php
+                    if ($product['buttonDelete']) {
+                ?>
+                <a class="mb-2" href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, 'action=remove_product&product_id=' . $product['id']); ?>"><img src="/dev_store/includes/templates/magiksc/images/Close-basic@3x.png" alt="Remove product" title="remove product" width="19px" height="24px"></a>
+                <span style="position: relative; top: 2px;">Remove</span>
+                <?php
+                }
+                ?>
+                
+            </div>
+        </div>
+        
+    </div>
+    
+    <?php } ?>
+    
+    <div class="col-12">
+        
+        <div class="row no-gutters table-secondary">
+            
+            <div class="col-xs-12 col-sm-12 offset-md-8 col-md-4">
+                
+                <p class="mt-1"><strong><?php echo SUB_TITLE_SUB_TOTAL; ?></strong> <span class="ml-3"><?php echo $cartShowTotal; ?></span></p>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div><!-- END OF ROW FOR PRODUCT DISPALY -->
 
 <!--bof shopping cart buttons-->
-<div class="buttonRow forward"><?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHECKOUT, BUTTON_CHECKOUT_ALT) . '</a>'; ?></div>
-<div class="buttonRow back"><?php echo zen_back_link() . zen_image_button(BUTTON_IMAGE_CONTINUE_SHOPPING, BUTTON_CONTINUE_SHOPPING_ALT) . '</a>'; ?></div>
+    <div class="col-12">
+        <div class="row no-gutters">
+            <div class="col-xs-6 col-sm-6 col-md-4 mt-2">
+                <div><?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHECKOUT, BUTTON_CHECKOUT_ALT) . '</a>'; ?></div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-4 mt-2">
+                <?php echo zen_back_link() . zen_image_button(BUTTON_IMAGE_CONTINUE_SHOPPING, BUTTON_CONTINUE_SHOPPING_ALT) . '</a>'; ?>
+            </div>
 <?php
 // show update cart button
   if (SHOW_SHOPPING_CART_UPDATE == 2 or SHOW_SHOPPING_CART_UPDATE == 3) {
 ?>
-<div class="buttonRow back"><?php echo zen_image_submit(ICON_IMAGE_UPDATE, ICON_UPDATE_ALT); ?></div>
+            <div class="col-xs-6 col-sm-6 col-md-4 text-center mt-2">
+                <div><?php echo zen_image_submit(ICON_IMAGE_UPDATE, ICON_UPDATE_ALT); ?></div>
+            </div>
 <?php
   } else { // don't show update button below cart
 ?>
@@ -144,15 +180,19 @@
   } // show update button
 ?>
 <!--eof shopping cart buttons-->
+        </div><!-- END OF INNER ROW NO-GUTTERS FOR BUTTONS -->
+    </div><!-- END OF COL-12 WRAPPER FOR BOTTOM BUTTONS -->
+</div><!-- END OF 3RD ROW NO-GUTTERS INSIDE FORM -->
 </form>
+</div> 
+<!-- END OF FORM COL-12 WRAPPER -->
 
-<br class="clearBoth" />
 <?php
     if (SHOW_SHIPPING_ESTIMATOR_BUTTON == '1') {
 ?>
-
-<div class="buttonRow back"><?php echo '<a href="javascript:popupWindow(\'' . zen_href_link(FILENAME_POPUP_SHIPPING_ESTIMATOR) . '\')">' .
- zen_image_button(BUTTON_IMAGE_SHIPPING_ESTIMATOR, BUTTON_SHIPPING_ESTIMATOR_ALT) . '</a>'; ?></div>
+<div class="col-12 mt-4 mb-4">
+    <div class=""><?php echo '<a class="btn btn-secondary" href="javascript:popupWindow(\'' . zen_href_link(FILENAME_POPUP_SHIPPING_ESTIMATOR) . '\')">' . 'Estimate Shipping' . '</a>'; ?></div>
+</div>
 <?php
     }
 ?>
@@ -231,3 +271,6 @@ while (!$show_display_shopping_cart_empty->EOF) {
   }
 ?>
 </div>
+<!-- END OF SHOPPING CART ROW -->
+
+<!-- =================== End of Shopping Cart ==================== -->

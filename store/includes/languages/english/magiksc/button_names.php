@@ -13,24 +13,24 @@
  */
 
 define('BUTTON_IMAGE_ADD_TO_CART', 'button_add_to_cart.gif');
-define('BUTTON_IMAGE_ADD_ADDRESS', 'button_add_address.gif');
+define('BUTTON_IMAGE_ADD_ADDRESS', 'button_add_address.png');
 define('BUTTON_IMAGE_ADD_PRODUCTS_TO_CART','button_add_selected.gif');
-define('BUTTON_IMAGE_BACK', 'button_back.gif');
+define('BUTTON_IMAGE_BACK', 'button_back.png');
 define('BUTTON_IMAGE_BUY_NOW', 'button_buy_now.gif');
 define('BUTTON_IMAGE_CANCEL', 'button_cancel.gif');
 define('BUTTON_IMAGE_CHANGE_ADDRESS', 'button_change_address.gif');
-define('BUTTON_IMAGE_CHECKOUT', 'button_checkout.gif');
+define('BUTTON_IMAGE_CHECKOUT', 'button_checkout.png');
 define('BUTTON_IMAGE_CONFIRM_SEND', 'button_confirm_send.gif');
 define('BUTTON_IMAGE_CONFIRM_ORDER', 'button_confirm_order.gif');
 define('BUTTON_IMAGE_CONTACT_US', 'button_contact_us.gif');
-define('BUTTON_IMAGE_CONTINUE', 'button_continue.gif');
-define('BUTTON_IMAGE_CONTINUE_SHOPPING', 'button_continue_shopping.gif');
-define('BUTTON_IMAGE_DELETE', 'button_delete.gif');
+define('BUTTON_IMAGE_CONTINUE', 'button_continue.png');
+define('BUTTON_IMAGE_CONTINUE_SHOPPING', 'button_continue_shopping.png');
+define('BUTTON_IMAGE_DELETE', 'button_delete.png');
 define('BUTTON_IMAGE_DELETE_SMALL', 'button_delete_small.gif');
 define('BUTTON_IMAGE_DOWNLOAD', 'button_download.gif');
-define('BUTTON_IMAGE_EDIT_SMALL', 'small_edit.gif');
+define('BUTTON_IMAGE_EDIT_SMALL', 'small_edit.png');
 define('BUTTON_IMAGE_IN_CART', 'button_in_cart.gif');
-define('BUTTON_IMAGE_LOGIN', 'button_login.gif');
+define('BUTTON_IMAGE_LOGIN', 'button_login.png');
 define('BUTTON_IMAGE_MY_ACCOUNT', 'button_my_account.gif');
 define('BUTTON_IMAGE_MY_ORDERS', 'button_my_orders.gif');
 define('BUTTON_IMAGE_NEXT', 'button_next.gif');
@@ -45,10 +45,10 @@ define('BUTTON_IMAGE_SEND_ANOTHER', 'button_send_another.gif');
 define('BUTTON_IMAGE_SHIPPING_ESTIMATOR', 'button_shipping_estimator.gif');
 define('BUTTON_IMAGE_SOLD_OUT','button_sold_out.gif');
 define('BUTTON_IMAGE_SOLD_OUT_SMALL','button_sold_out_sm.gif');
-define('BUTTON_IMAGE_SUBMIT', 'button_submit.gif');
+define('BUTTON_IMAGE_SUBMIT', 'button_submit.png');
 define('BUTTON_IMAGE_UNSUBSCRIBE', 'button_unsubscribe.gif');
-define('BUTTON_IMAGE_UPDATE', 'button_update.gif');
-define('BUTTON_IMAGE_VIEW_SMALL', 'button_view.gif');
+define('BUTTON_IMAGE_UPDATE', 'button_update.png');
+define('BUTTON_IMAGE_VIEW_SMALL', 'button_view.png');
 define('BUTTON_IMAGE_WRITE_REVIEW', 'button_write_review.gif');
 
 define('BUTTON_IMAGE_READ_REVIEWS', 'button_read_reviews.gif');

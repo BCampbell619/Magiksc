@@ -45,10 +45,9 @@ echo "</pre>"."<br>";*/
 <div class="col-12">
 <h3 class="text-center" id="attribsOptionsText"><?php echo TEXT_PRODUCT_OPTIONS; ?></h3>
 </div>
-<!--<div class="form-group" id="productAttributes">-->
+<div id="test" class="form-group" id="productAttributes">
 <?php if ($zv_display_select_option > 0) { ?>
 
-<div id="test">
 <?php } // show please select unless all are readonly ?>
 
 <?php
@@ -85,8 +84,9 @@ if (isset($options_attributes_image[$i]) && $options_attributes_image[$i] != '')
 <?php
     }
 ?>
-</div><!-- end of test -->
-<!--</div>--><!-- end of Form Group -->
+
+</div>
+<!-- end of Form Group -->
 
 </div><!-- end of Row -->
 <?php

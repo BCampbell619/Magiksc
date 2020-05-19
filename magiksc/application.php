@@ -5,11 +5,11 @@
     <div class="row">
        <div class="col-12">
         <section class="riderApplication">
-            <h2 class="display-4">Application</h2>
+            <h2 class="display-4 blueDark">Application</h2>
             <p class="lead">If you would like to be considered for sponsorship,  please fill out the form below and we will respond to you as soon as possible.</p> 
     
             <form name="ridersupport" action="/ridersupportmail.php" method="post">
-                <h4 class="mt-4 mb-3">PERSONAL INFORMATION <span id="formMsg1"></span></h4>
+                <h4 class="mt-4 mb-3 blueMed">PERSONAL INFORMATION <span id="formMsg1"></span></h4>
                 <div class="form-row mb-3">
                     <div class="col-xs-12 col-sm-4 col-md-4 mb-2">
                         <input class="form-control" id="Name" size="32" name="Name" placeholder="Full Name"  required/>
@@ -40,7 +40,7 @@
                         <input class="form-control" id="Email" size="32" name="Email" placeholder="Email" required/>
                     </div>
                 </div>
-                <h4 class="mt-4 mb-3">RIDING INFORMATION <span id="formMsg2"></span></h4>
+                <h4 class="mt-4 mb-3 blueMed">RIDING INFORMATION <span id="formMsg2"></span></h4>
                 <div class="form-row mb-3">
                     <div class="col-xs-12 col-sm-3 col-md-3 mb-2">
                         <label for="type">Type of Riding&#58;</label>

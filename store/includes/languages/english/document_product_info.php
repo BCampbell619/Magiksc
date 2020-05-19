@@ -13,7 +13,7 @@ define('TEXT_MORE_INFORMATION', 'For more information, please visit this product
 define('TEXT_DATE_ADDED', 'This product was added to our catalog on %s.');
 define('TEXT_DATE_AVAILABLE', 'This product will be in stock on %s.');
 define('TEXT_ALSO_PURCHASED_PRODUCTS', 'Customers who bought this product also purchased...');
-define('TEXT_PRODUCT_OPTIONS', 'Please Choose: ');
+define('TEXT_PRODUCT_OPTIONS', 'Kustomize: ');
 define('TEXT_PRODUCT_MANUFACTURER', 'Manufactured by: ');
 define('TEXT_PRODUCT_WEIGHT', 'Shipping Weight: ');
 define('TEXT_PRODUCT_QUANTITY', ' Units in Stock');

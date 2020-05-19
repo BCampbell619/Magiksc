@@ -4,13 +4,13 @@
 <div class="container-fluid">
 <div class="row">
 <section class="riderSupportBody">
-<h2 class="display-4">RIDER SUPPORT</h2>
+<h2 class="display-4 blueDark">RIDER SUPPORT</h2>
 <p class="lead">Please take the time to read through this page prior to submitting your request, as it will walk you through the process and answer most of your questions about our sponsorship program.  Please feel free to call us &#40;951-654-5550&#41; if you have any questions after reading.</p>
 
-<h4>When:</h4>
+<h4 class="blueMed">WHEN:</h4>
 <p><b>Oct 1st</b> &ndash; <b>Dec 1st</b> each year. We would love to sponsor everyone who submits info but unfortunately we have a set number of rider spots available each year. We will not consider applicants after our cut off date.</p>
 
-<h4>SUBMITTING A REQUEST FOR SPONSORSHIP</h4>
+<h4 class="blueMed">SUBMITTING A REQUEST FOR SPONSORSHIP</h4>
 
 <p>Magik Kustoms will accept a request one of two ways, please do not do both:</p>
 <ol>
@@ -18,13 +18,13 @@
     <li>Email in a copy of your current resume. Please note that the majority of our interaction back to you will be via email.</li>
 </ol>
 
-<h4>OPTION 1: ONLINE APPLICATION</h4>
+<h4 class="blueMed">OPTION 1: ONLINE APPLICATION</h4>
 
 <p>Please fill out the online application completely and submit it through the site. All of this information is vital to making our selection, so please make sure that all of the information is filled in and accurate.
 <a href="application.php">CLICK HERE </a> to apply</p>
 
 
-<h4>OPTION 2: EMAILING YOUR PERSONAL RESUME</h4>
+<h4 class="blueMed">OPTION 2: EMAILING YOUR PERSONAL RESUME</h4>
 
 <p>If you choose to submit your resume instead of the provided application, make sure to keep the following in mind:</p>
 <ol>
@@ -43,11 +43,11 @@
     </li>
 </ol>
 
-<h4>THE NEXT STEP</h4>
+<h4 class="blueMed">THE NEXT STEP</h4>
 
 <p>You should expect an e-mail response within a few weeks of submitting your request for sponsorship. This is a very busy time of year for the rider support team, so please be patient and allow sufficient time for your resume to be reviewed. Once you receive a response, you will need to follow the instructions included in that e-mail.</p>
 
-<h4>LEVELS OF SPONSORSHIP</h4>
+<h4 class="blueMed">LEVELS OF SPONSORSHIP</h4>
  
 <p>There are 4 basic levels that make up our rider support program:</p>
 

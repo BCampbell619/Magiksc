@@ -177,7 +177,7 @@ if (!isset($flag_disable_right) || !$flag_disable_right) {
   *
   */
 ?>
-<div id="navColumnTwoWrapper" style="width: <?php echo BOX_WIDTH_RIGHT; ?>"><?php require(DIR_WS_MODULES . zen_get_module_directory('column_right.php')); ?></div></td>
+<!--<div id="navColumnTwoWrapper" style="width: <?php //echo BOX_WIDTH_RIGHT; ?>"><?php //require(DIR_WS_MODULES . zen_get_module_directory('column_right.php')); ?></div></td>-->
 <?php
 }
 ?>
