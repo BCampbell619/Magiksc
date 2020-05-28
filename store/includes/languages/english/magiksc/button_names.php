@@ -18,7 +18,7 @@ define('BUTTON_IMAGE_ADD_PRODUCTS_TO_CART','button_add_selected.gif');
 define('BUTTON_IMAGE_BACK', 'button_back.png');
 define('BUTTON_IMAGE_BUY_NOW', 'button_buy_now.gif');
 define('BUTTON_IMAGE_CANCEL', 'button_cancel.gif');
-define('BUTTON_IMAGE_CHANGE_ADDRESS', 'button_change_address.gif');
+define('BUTTON_IMAGE_CHANGE_ADDRESS', 'button_change_address.png');
 define('BUTTON_IMAGE_CHECKOUT', 'button_checkout.png');
 define('BUTTON_IMAGE_CONFIRM_SEND', 'button_confirm_send.gif');
 define('BUTTON_IMAGE_CONFIRM_ORDER', 'button_confirm_order.gif');

@@ -14,6 +14,6 @@
 
 
 <?php for ($i=0, $n=sizeof($output); $i<$n; $i++) { ?>
-  <div <?php if ($output[$i]['params'] == 'class="messageStackSuccess larger"') { echo 'class="alert alert-success" role="alert"'; } else { echo $output[$i]['params']; } ?>><?php echo $output[$i]['text']; ?></div>
+  <div <?php if ($output[$i]['params'] == 'class="messageStackSuccess larger"') { echo 'class="alert alert-success" role="alert"'; } else if ($output[$i]['params'] == 'class="messageStackError larger"') { echo 'class="alert alert-danger" role="alert"'; } else { echo $output[$i]['params']; } ?>><?php echo $output[$i]['text']; ?></div>
 
 <?php } ?>

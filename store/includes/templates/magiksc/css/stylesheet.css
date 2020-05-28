@@ -19,21 +19,12 @@ body {
 a img {border: none; }
 
 a:link, #navEZPagesTOC ul li a {
-	color: #3300FF;
-	text-decoration: none;
-	}
- 
-a:visited {
-	color: #3300FF;
+	color: #111;
 	text-decoration: none;
 	}
 
 a:hover, #navEZPagesTOC ul li a:hover, #navMain ul li a:hover, #navSupp ul li a:hover, #navCatTabs ul li a:hover {
-	color: #FF0000;
-	}
-
-a:active {
-	color: #0000FF;
+	color: #111;
 	}
 
 h1 {
@@ -705,7 +696,7 @@ h3.leftBoxHeading, h3.leftBoxHeading a {
 
 h3.rightBoxHeading, h3.rightBoxHeading a {
 	font-size: 1.1em;
-	color: #FFFF00;
+	color: #111;
 	}
 
 .rightBoxHeading {
@@ -715,12 +706,12 @@ h3.rightBoxHeading, h3.rightBoxHeading a {
 	}
 
 h3.leftBoxHeading a:hover {
-	color: #FFFF33;
+	color: #111;
 	text-decoration: none;
 	} 
 
 h3.rightBoxHeading a:hover {
-	color: #FF0000;
+	color: #111;
 	text-decoration: none;
 	}
 
@@ -885,3 +876,9 @@ table{border:none;padding:0;margin:0; border-spacing:0;border-collapse:collapse;
 #quantityDiscountsDetails td {border: 1px solid black;}
 .products-listing .productsAllListing, .productsNewListing, .productsFeaturedListing {width: 100%;}
 .tableBorder1 td {border: 1px solid black;}
+
+.leftNavLink,
+.leftNavLink:hover,
+h3:hover {
+    color: #333;
+}

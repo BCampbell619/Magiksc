@@ -11,7 +11,7 @@
 
 // choose box images based on box position
   if ($title_link) {
-    $title = '<a href="' . zen_href_link($title_link) . '">' . $title . BOX_HEADING_LINKS . '</a>';
+    $title = '<a class="leftNavLink" href="' . zen_href_link($title_link) . '">' . $title . BOX_HEADING_LINKS . '</a>';
   }
 //
 ?>

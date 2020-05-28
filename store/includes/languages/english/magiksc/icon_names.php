@@ -8,7 +8,7 @@
  */
 
 // define the icon images used in the project
-define('ICON_IMAGE_ERROR', 'error.gif');
+define('ICON_IMAGE_ERROR', 'error.png');
 define('ICON_IMAGE_WARNING', 'warning.gif');
 define('ICON_IMAGE_SUCCESS', 'success.png');
 define('ICON_IMAGE_TRASH', 'small_delete.gif');

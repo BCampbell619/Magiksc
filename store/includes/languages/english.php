@@ -106,7 +106,7 @@
 // shopping_cart box text in sideboxes/shopping_cart.php
   define('BOX_HEADING_SHOPPING_CART', 'Shopping Cart');
   define('BOX_SHOPPING_CART_EMPTY', 'Your cart is empty.');
-  define('BOX_SHOPPING_CART_DIVIDER', 'ea.-&nbsp;');
+  define('BOX_SHOPPING_CART_DIVIDER', '');
 
 // order_history box text in sideboxes/order_history.php
   define('BOX_HEADING_CUSTOMER_ORDERS', 'Quick Re-Order');

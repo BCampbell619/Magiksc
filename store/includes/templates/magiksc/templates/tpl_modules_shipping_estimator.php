@@ -33,9 +33,14 @@
       }
 ?>
 
-<div class="bold back" id="seShipTo"><?php echo CART_SHIPPING_METHOD_TO; ?></div>
-<address class="back"><?php echo zen_address_format($order->delivery['format_id'], $order->delivery, 1, ' ', '<br />'); ?></address>
-<br class="clearBoth" />
+<div class="row">
+    <div class="col-xs-3 col-sm-6 col-md-2">
+        <div id="seShipTo"><?php echo CART_SHIPPING_METHOD_TO; ?></div>
+    </div>
+    <div class="col-xs-9 col-sm-6 col-md-10">
+        <address><?php echo zen_address_format($order->delivery['format_id'], $order->delivery, 1, ' ', '<br />'); ?></address>
+    </div>
+</div>
 <?php
     } else {
 ?>
