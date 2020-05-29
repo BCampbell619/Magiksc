@@ -29,8 +29,10 @@
   if (ACCOUNT_GENDER == 'true') {
 ?>
 
-    <div class="col-xs-6 col-sm-2">
-<?php echo zen_draw_radio_field('gender', 'm', $male, 'id="gender-male"') .  MALE . '</div> <div class="col-xs-6 col-sm-2">' . zen_draw_radio_field('gender', 'f', $female, 'id="gender-female"') . FEMALE . '</div>' . (zen_not_null(ENTRY_GENDER_TEXT) ? '<div class="col-12"> <span class="alert">' . ENTRY_GENDER_TEXT . '</span></div>': ''); ?>
+    <div class="col-12">
+        <div class="form-check form-check-inline">
+<?php echo zen_draw_radio_field('gender', 'm', $male, 'id="gender-male"') . '<label class="form-check-label radioButtonLabel" for="gender-male">' .  MALE . '</label> </div> <div class="form-check form-check-inline">' . zen_draw_radio_field('gender', 'f', $female, 'id="gender-female"') . '<label class="form-check-label radioButtonLabel" for="gender-female">' . FEMALE . '</label>' . (zen_not_null(ENTRY_GENDER_TEXT) ? '<span class="alert">' . ENTRY_GENDER_TEXT . '</span></div>': ''); ?>
+    </div>
 <?php
   }
 ?>

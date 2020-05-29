@@ -21,7 +21,7 @@ define('BUTTON_IMAGE_CANCEL', 'button_cancel.gif');
 define('BUTTON_IMAGE_CHANGE_ADDRESS', 'button_change_address.png');
 define('BUTTON_IMAGE_CHECKOUT', 'button_checkout.png');
 define('BUTTON_IMAGE_CONFIRM_SEND', 'button_confirm_send.gif');
-define('BUTTON_IMAGE_CONFIRM_ORDER', 'button_confirm_order.gif');
+define('BUTTON_IMAGE_CONFIRM_ORDER', 'button_confirm_order.png');
 define('BUTTON_IMAGE_CONTACT_US', 'button_contact_us.gif');
 define('BUTTON_IMAGE_CONTINUE', 'button_continue.png');
 define('BUTTON_IMAGE_CONTINUE_SHOPPING', 'button_continue_shopping.png');
@@ -40,7 +40,7 @@ define('BUTTON_IMAGE_RETURN_TO_PROD_LIST', 'button_return_to_product_list.gif');
 define('BUTTON_IMAGE_REVIEWS', 'button_reviews.gif');
 define('BUTTON_IMAGE_SEARCH', 'button_search.gif');
 define('BUTTON_IMAGE_SEND', 'button_send.gif');
-define('BUTTON_IMAGE_SEND_A_GIFT_CERT', 'button_send_a_gift_cert.gif');
+define('BUTTON_IMAGE_SEND_A_GIFT_CERT', 'button_send_a_gift_cert.png');
 define('BUTTON_IMAGE_SEND_ANOTHER', 'button_send_another.gif');
 define('BUTTON_IMAGE_SHIPPING_ESTIMATOR', 'button_shipping_estimator.gif');
 define('BUTTON_IMAGE_SOLD_OUT','button_sold_out.gif');
@@ -54,13 +54,13 @@ define('BUTTON_IMAGE_WRITE_REVIEW', 'button_write_review.gif');
 define('BUTTON_IMAGE_READ_REVIEWS', 'button_read_reviews.gif');
 define('BUTTON_IMAGE_GOTO_PROD_DETAILS', 'button_goto_prod_details.gif');
 define('BUTTON_IMAGE_MORE_REVIEWS', 'button_more_reviews.gif');
-define('BUTTON_IMAGE_CONTINUE_CHECKOUT', 'button_continue_checkout.gif');
+define('BUTTON_IMAGE_CONTINUE_CHECKOUT', 'button_continue.png');
 //define('PREVNEXT_BUTTON_NEXT', '[Next&nbsp;&gt;&gt;]');
 //define('PREVNEXT_BUTTON_LAST', 'LAST&gt;&gt;');
 
 
 define('BUTTON_IMAGE_CREATE_ACCOUNT', 'button_create_account.gif');
-define('BUTTON_IMAGE_LOG_OFF', 'button_logoff.gif');
+define('BUTTON_IMAGE_LOG_OFF', 'button_logoff.png');
 /*
  * ALT text is used as Button Text, or for the ALT tag on image-buttons
  */

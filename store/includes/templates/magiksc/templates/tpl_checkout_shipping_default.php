@@ -22,23 +22,17 @@
 
 <h2 id="checkoutShippingHeadingAddress"><?php echo TITLE_SHIPPING_ADDRESS; ?></h2>
 
-<div id="checkoutShipto" class="row">
-    <div class="col-xs-12 col-sm-12 col-md-8">
-        <?php echo TEXT_CHOOSE_SHIPPING_DESTINATION; ?>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-4">
-        <div class="row">
-            <div class="col-12">
-                <address><strong><?php echo zen_address_label($_SESSION['customer_id'], $_SESSION['sendto'], true, ' ', '<br />'); ?></strong></address>
-            </div>
+<p><?php echo TEXT_CHOOSE_SHIPPING_DESTINATION; ?></p>
+<address><strong><?php echo zen_address_label($_SESSION['customer_id'], $_SESSION['sendto'], true, ' ', '<br />'); ?></strong></address>
 <?php if ($displayAddressEdit) { ?>
-        <div class="col-12">
-            <?php echo '<a href="' . $editShippingButtonLink . '">' . zen_image_button(BUTTON_IMAGE_CHANGE_ADDRESS, BUTTON_CHANGE_ADDRESS_ALT) . '</a>'; ?>
-        </div>
-<?php } ?>
-        </div><!-- END OF SHIPPING ADDRESS INNER ROW -->
+<div class="row">
+    <div class="col-12 mt-2 mb-4">
+<?php echo '<a class="mt-2 mb-4" href="' . $editShippingButtonLink . '">' . zen_image_button(BUTTON_IMAGE_CHANGE_ADDRESS, BUTTON_CHANGE_ADDRESS_ALT) . '</a>'; ?>        
     </div>
-</div><!-- END OF SHIPPING ADDRESS OUTER ROW -->
+</div>
+<?php } ?>
+
+
 <?php
   if (zen_count_shipping_modules() > 0) {
 ?>
@@ -100,21 +94,21 @@
 <?php
             if ( ($n > 1) || ($n2 > 1) ) {
 ?>
-<div class="col-xs-12 col-sm-6 col-md-4">
+<div class="col-xs-12 col-sm-12 col-md-12">
     <div class="row">
-<div class="important forward"><?php echo $currencies->format(zen_add_tax($quotes[$i]['methods'][$j]['cost'], (isset($quotes[$i]['tax']) ? $quotes[$i]['tax'] : 0))); ?></div>
+<div class="col-12"><strong><?php echo $currencies->format(zen_add_tax($quotes[$i]['methods'][$j]['cost'], (isset($quotes[$i]['tax']) ? $quotes[$i]['tax'] : 0))); ?></strong></div><!-- PRICE COL WRAPPER -->
 <?php
             } else {
 ?>
-<div class="col-xs-12 col-sm-6 col-md-4">
-    <div class="row">
-<div class="col-12 mt-2 mb-4"><?php echo $currencies->format(zen_add_tax($quotes[$i]['methods'][$j]['cost'], $quotes[$i]['tax'])) . zen_draw_hidden_field('shipping', $quotes[$i]['id'] . '_' . $quotes[$i]['methods'][$j]['id']); ?></div>
+<div class="col-12 mt-2 mb-4"><strong><?php echo $currencies->format(zen_add_tax($quotes[$i]['methods'][$j]['cost'], $quotes[$i]['tax'])) . zen_draw_hidden_field('shipping', $quotes[$i]['id'] . '_' . $quotes[$i]['methods'][$j]['id']); ?></strong></div>
 <?php
             }
 ?>
 <div class="col-12 mt-2 mb-4">
+    <div class="form-check form-check-inline">
 <?php echo zen_draw_radio_field('shipping', $quotes[$i]['id'] . '_' . $quotes[$i]['methods'][$j]['id'], $checked, 'id="ship-'.$quotes[$i]['id'] . '-' . str_replace(' ', '-', $quotes[$i]['methods'][$j]['id']) .'"'); ?><?php echo $quotes[$i]['methods'][$j]['title']; ?></div>
     </div>
+</div><!-- END OF SHIPPING OPTIONS INNER ROW -->
 </div><!-- END OF SHIPPING OPTIONS COL WRAPPER -->
 <!--<label for="ship-<?php //echo $quotes[$i]['id'] . '-' . str_replace(' ', '-', $quotes[$i]['methods'][$j]['id']); ?>" class="checkboxLabel" ><?php //echo $quotes[$i]['methods'][$j]['title']; ?></label> -->
 <!--</div>-->
@@ -153,7 +147,7 @@
 <div class="row">
     <div class="col-12 mt-2 mb-4 clearfix">
         <div class="float-left"><?php echo zen_image_submit(BUTTON_IMAGE_CONTINUE_CHECKOUT, BUTTON_CONTINUE_ALT); ?></div>
-        <div class="mt-2 ml-2 float-left"><?php echo '<strong>' . TITLE_CONTINUE_CHECKOUT_PROCEDURE . '</strong>' . TEXT_CONTINUE_CHECKOUT_PROCEDURE; ?></div>
+        <div class="mt-2 ml-2 float-left"><small><?php echo '<strong>' . TITLE_CONTINUE_CHECKOUT_PROCEDURE . '</strong>' . TEXT_CONTINUE_CHECKOUT_PROCEDURE; ?></small></div>
     </div>
 </div>
 

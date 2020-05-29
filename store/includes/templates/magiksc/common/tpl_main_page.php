@@ -115,7 +115,7 @@ if (!isset($flag_disable_left) || !$flag_disable_left) {
 </div><!-- END OF LEFT NAV COLUMN -->
 <!-- =================== end of left column navigation ==================== -->
 <!-- =================== Start of center column ==================== -->
-<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
     <!-- <td valign="top"> -->
 <!-- bof  breadcrumb -->
 <?php if (DEFINE_BREADCRUMB_STATUS == '1' || (DEFINE_BREADCRUMB_STATUS == '2' && !$this_is_home_page) ) { ?>

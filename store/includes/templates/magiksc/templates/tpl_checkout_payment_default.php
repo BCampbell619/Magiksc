@@ -13,7 +13,8 @@
  */
 ?>
 <?php echo $payment_modules->javascript_validation(); ?>
-<div class="centerColumn" id="checkoutPayment">
+<div class="row" id="checkoutPayment">
+    <div class="col-12">
 <?php echo zen_draw_form('checkout_payment', zen_href_link(FILENAME_CHECKOUT_CONFIRMATION, '', 'SSL'), 'post', ($flagOnSubmit ? 'onsubmit="return check_form();"' : '')); ?>
 
 <h1 id="checkoutPaymentHeading"><?php echo HEADING_TITLE; ?></h1>
@@ -40,15 +41,19 @@
       // ** END PAYPAL EXPRESS CHECKOUT ** ?>
 <h2 id="checkoutPaymentHeadingAddress"><?php echo TITLE_BILLING_ADDRESS; ?></h2>
 
-<div id="checkoutBillto" class="floatingBox back">
 <?php if (MAX_ADDRESS_BOOK_ENTRIES >= 2) { ?>
-<div class="buttonRow forward"><?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_PAYMENT_ADDRESS, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHANGE_ADDRESS, BUTTON_CHANGE_ADDRESS_ALT) . '</a>'; ?></div>
-<?php } ?>
-<address><?php echo zen_address_label($_SESSION['customer_id'], $_SESSION['billto'], true, ' ', '<br />'); ?></address>
-</div>
 
-<div class="floatingBox important forward"><?php echo TEXT_SELECTED_BILLING_DESTINATION; ?></div>
-<br class="clearBoth" />
+<p><?php echo TEXT_SELECTED_BILLING_DESTINATION; ?></p>
+
+<address><?php echo zen_address_label($_SESSION['customer_id'], $_SESSION['billto'], true, ' ', '<br />'); ?></address>
+
+<div class="row">
+    <div class="col-12 mt-2 mb-4">
+<?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_PAYMENT_ADDRESS, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHANGE_ADDRESS, BUTTON_CHANGE_ADDRESS_ALT) . '</a>'; ?>
+    </div>
+</div>
+<?php } ?>
+
 <?php // ** BEGIN PAYPAL EXPRESS CHECKOUT **
       }
       // ** END PAYPAL EXPRESS CHECKOUT ** ?>
@@ -81,8 +86,12 @@
 <legend><?php echo $selection[$i]['module']; ?></legend>
 <?php echo $selection[$i]['redeem_instructions']; ?>
 <div class="gvBal larger"><?php echo $selection[$i]['checkbox']; ?></div>
-<label class="inputLabel"<?php echo ($selection[$i]['fields'][$j]['tag']) ? ' for="'.$selection[$i]['fields'][$j]['tag'].'"': ''; ?>><?php echo $selection[$i]['fields'][$j]['title']; ?></label>
-<?php echo $selection[$i]['fields'][$j]['field']; ?>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <label class="inputLabel"<?php echo ($selection[$i]['fields'][$j]['tag']) ? ' for="'.$selection[$i]['fields'][$j]['tag'].'"': ''; ?>><?php echo $selection[$i]['fields'][$j]['title']; ?></label>
+        <?php echo $selection[$i]['fields'][$j]['field']; ?>  
+    </div>
+</div>
 </fieldset>
 <?php
       }
@@ -202,8 +211,12 @@
 <?php echo zen_draw_textarea_field('comments', '45', '3'); ?>
 </fieldset>
 
-<div class="buttonRow forward"><?php echo zen_image_submit(BUTTON_IMAGE_CONTINUE_CHECKOUT, BUTTON_CONTINUE_ALT, 'onclick="submitFunction('.zen_user_has_gv_account($_SESSION['customer_id']).','.$order->info['total'].')"'); ?></div>
-<div class="buttonRow back"><?php echo TITLE_CONTINUE_CHECKOUT_PROCEDURE . '<br />' . TEXT_CONTINUE_CHECKOUT_PROCEDURE; ?></div>
-
-</form>
+<div class="row">
+    <div class="col-12 clearfix mt-2 mb-4">
+        <div class="float-left"><?php echo zen_image_submit(BUTTON_IMAGE_CONTINUE_CHECKOUT, BUTTON_CONTINUE_ALT, 'onclick="submitFunction('.zen_user_has_gv_account($_SESSION['customer_id']).','.$order->info['total'].')"'); ?></div>
+        <div class="float-left mt-2 ml-2"><small><?php echo TITLE_CONTINUE_CHECKOUT_PROCEDURE . TEXT_CONTINUE_CHECKOUT_PROCEDURE; ?></small></div>
+    </div>
 </div>
+</form>
+    </div><!-- END OF CHECKOUT PAYMENT DEFAULT COL WRAPPER -->
+</div><!-- END OF CHECKOUT PAYMENT DEFAULT ROW -->

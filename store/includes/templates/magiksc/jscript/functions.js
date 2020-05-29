@@ -149,32 +149,34 @@ One EventListener for each navigation item. Each listener follows the same patte
 
 
 // EventListener for Moto navigation declared
-
-document.querySelector('#MXList').addEventListener('mouseenter', function () {
-    'use strict';
-    
-    Moto.hideAction(hiddenNav);
-    
-    if (!Moto.currState) {
-        Moto.navAction('ProdOptions', 'drop-MX-show', 'drop-MX-hide');
-        Moto.currState = true;
-    }
-
-});
+if (document.querySelector('#MXList') != null) {
+    document.querySelector('#MXList').addEventListener('mouseenter', function () {
+        'use strict';
+        
+        Moto.hideAction(hiddenNav);
+        
+        if (!Moto.currState) {
+            Moto.navAction('ProdOptions', 'drop-MX-show', 'drop-MX-hide');
+            Moto.currState = true;
+        }
+        
+    });
+}
 
 // EventListener for Helmet navigation declared
-
-document.querySelector('#HelmetNav').addEventListener('mouseenter', function () {
-    'use strict';
-    
-    Helmet.hideAction(hiddenNav);
-    
-    if (!Helmet.currState) {
-        Helmet.navAction('HelmetOptions', 'drop-HT-show', 'drop-HT-hide');
-        Helmet.currState = true;
-    }
-    
-});
+if (document.querySelector('#HelmetNav') != null) {
+    document.querySelector('#HelmetNav').addEventListener('mouseenter', function () {
+        'use strict';
+        
+        Helmet.hideAction(hiddenNav);
+        
+        if (!Helmet.currState) {
+            Helmet.navAction('HelmetOptions', 'drop-HT-show', 'drop-HT-hide');
+            Helmet.currState = true;
+        }
+        
+    });
+}
 
 // EventListener for Bike navigation declared
 
@@ -191,18 +193,19 @@ document.querySelector('#HelmetNav').addEventListener('mouseenter', function () 
 });*/
 
 // EventListener for UTV navigation declared
-
-document.querySelector('#OffRdNav').addEventListener('mouseenter', function () {
-    'use strict';
-    
-    UTV.hideAction(hiddenNav);
-    
-    if (!UTV.currState) {
-        UTV.navAction('UTVOptions', 'drop-UTV-show', 'drop-UTV-hide');
-        UTV.currState = true;
-    }
-    
-});
+if (document.querySelector('#OffRdNav') != null) {
+    document.querySelector('#OffRdNav').addEventListener('mouseenter', function () {
+        'use strict';
+        
+        UTV.hideAction(hiddenNav);
+        
+        if (!UTV.currState) {
+            UTV.navAction('UTVOptions', 'drop-UTV-show', 'drop-UTV-hide');
+            UTV.currState = true;
+        }
+        
+    });
+}
 
 /*
 
@@ -217,19 +220,20 @@ header eventlistener - When the mouse moves into the header hide the drop conten
 // --------------------------------------------------------------------------------->
 
 // Mobile navigation evenlistener - when the icon is clicked/touched show or hide the content
-
-document.querySelector('.navToggle').addEventListener('click', function () {
-    'use strict';
-    
-    if (mobileNav.currState === false) {
-        mobileNav.navAction('MobileList', 'drop-content-show', 'drop-content-hide');
-        mobileNav.currState = true;
-    } else if (mobileNav.currState === true) {
-        mobileNav.hideAction(hiddenNav);
-        mobileNav.currState = false;
-    }
-    
-});
+if (document.querySelector('.navToggle') != null) {
+    document.querySelector('.navToggle').addEventListener('click', function () {
+        'use strict';
+        
+        if (mobileNav.currState === false) {
+            mobileNav.navAction('MobileList', 'drop-content-show', 'drop-content-hide');
+            mobileNav.currState = true;
+        } else if (mobileNav.currState === true) {
+            mobileNav.hideAction(hiddenNav);
+            mobileNav.currState = false;
+        }
+        
+    });
+}
 
 /*============================================================================================================================*/
 /*                                          End of EvenListeners for Navigation                                               */
@@ -249,19 +253,74 @@ var DOMStrings = {
     suzukiElem,
     ktmElem,
     pitElem;
+    
+    if (document.querySelector(DOMStrings.hondaImg) != null) {
+        hondaElem = document.querySelector(DOMStrings.hondaImg).childNodes;
         
-    hondaElem = document.querySelector(DOMStrings.hondaImg).childNodes;
-    kawasakiElem = document.querySelector(DOMStrings.kawasakiImg).childNodes;
-    yamahaElem = document.querySelector(DOMStrings.yamahaImg).childNodes;
-    suzukiElem = document.querySelector(DOMStrings.suzukiImg).childNodes;
-    ktmElem = document.querySelector(DOMStrings.ktmImg).childNodes;
-    pitElem = document.querySelector(DOMStrings.pitImg).childNodes;
-        
-    if (hondaElem[0].hasAttribute("width")) {
-        hondaElem[0].setAttribute("width", "300px");
+        if (hondaElem[0].hasAttribute("width")) {
+            hondaElem[0].setAttribute("width", "300px");
+        }
     }
+
+    if (document.querySelector(DOMStrings.kawasakiImg) != null) {
+        kawasakiElem = document.querySelector(DOMStrings.kawasakiImg).childNodes;
+    }
+
+    if (document.querySelector(DOMStrings.yamahaImg) != null) {
+        yamahaElem = document.querySelector(DOMStrings.yamahaImg).childNodes;
+    }
+    
+    if (document.querySelector(DOMStrings.suzukiImg) != null) {
+        suzukiElem = document.querySelector(DOMStrings.suzukiImg).childNodes;
+    }
+    
+    if (document.querySelector(DOMStrings.ktmImg) != null) {
+        ktmElem = document.querySelector(DOMStrings.ktmImg).childNodes;
+    }
+    
+    if (document.querySelector(DOMStrings.pitImg) != null) {
+        pitElem = document.querySelector(DOMStrings.pitImg).childNodes;
+    }
+    
    // alert(kawasakiElem[0].textContent);
    // alert(yamahaElem[0].textContent);
    // alert(suzukiElem[0].textContent);
     //alert(ktmElem[1].innerHTML);
     //alert(pitElem[1].innerHTML);
+
+/*
+This IIFE helps with formatting the MR and MRS radio buttons of login/account creation and other forms.
+This replaces the form-control classes with the form-check-input class for formatting corrections
+*/
+    
+if (document.querySelector("#gender-male") != null) {
+    let formControlMale = document.querySelector("#gender-male");
+    formControlMale.setAttribute("class", "form-check-input");
+}
+
+if (document.querySelector("#gender-female") != null) {
+    let formControlFemale = document.querySelector("#gender-female");
+    formControlFemale.setAttribute("class", "form-check-input");
+}
+
+if (document.querySelector("input") != null) {
+    
+    let inputNodes = document.querySelector("input");
+    
+    Array.from(inputNodes).forEach(cur => {
+            
+        if (cur.hasAttribute("id")) {
+            
+            let tmpID = cur.getAttribute("id");
+            
+            if (tmpID.search("ship") != -1) {
+                
+                cur.setAttribute("class", "form-check-input");
+                
+            }
+            
+        }
+        
+    });
+    
+}

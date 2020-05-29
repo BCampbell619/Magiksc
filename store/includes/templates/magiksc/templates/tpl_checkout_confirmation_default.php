@@ -12,21 +12,67 @@
  * @version $Id: tpl_checkout_confirmation_default.php 6247 2007-04-21 21:34:47Z wilt $
  */
 ?>
-<div class="centerColumn" id="checkoutConfirmDefault">
-
+<div class="row" id="checkoutConfirmDefault">
+    <div class="col-12">
 <h1 id="checkoutConfirmDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
 
 <?php if ($messageStack->size('redemptions') > 0) echo $messageStack->output('redemptions'); ?>
 <?php if ($messageStack->size('checkout_confirmation') > 0) echo $messageStack->output('checkout_confirmation'); ?>
 <?php if ($messageStack->size('checkout') > 0) echo $messageStack->output('checkout'); ?>
 
-<div id="checkoutBillto" class="back">
-<h2 id="checkoutConfirmDefaultBillingAddress"><?php echo HEADING_BILLING_ADDRESS; ?></h2>
-<?php if (!$flagDisablePaymentAddressChange) { ?>
-<div class="buttonRow forward"><?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_PAYMENT, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_EDIT_SMALL, BUTTON_EDIT_SMALL_ALT) . '</a>'; ?></div>
+<div class="row">
+
+<?php
+  if ($_SESSION['sendto'] != false) {
+?>
+<div class="col-xs-12 col-sm-12 col-md-6">
+<h2 id="checkoutConfirmDefaultShippingAddress"><?php echo HEADING_DELIVERY_ADDRESS; ?></h2>
+
+<address><?php echo zen_address_format($order->delivery['format_id'], $order->delivery, 1, ' ', '<br />'); ?></address>
+
+<div class="row">
+    <div class="col-12 mt-2 mb-2">
+        <?php echo '<a href="' . $editShippingButtonLink . '">' . zen_image_button(BUTTON_IMAGE_EDIT_SMALL, BUTTON_EDIT_SMALL_ALT) . '</a>'; ?>
+    </div>
+</div>
+
+
+<?php
+    if ($order->info['shipping_method']) {
+?>
+<h3 id="checkoutConfirmDefaultShipment"><?php echo HEADING_SHIPPING_METHOD; ?></h3>
+<h4 id="checkoutConfirmDefaultShipmentTitle"><?php echo $order->info['shipping_method']; ?></h4>
+
+<?php
+    }
+?>
+</div><!-- END OF SHIPPING INFO COL WRAPPER -->
+<?php
+  }
+?>
+
+<?php
+  if ($_SESSION['sendto'] != false) {
+?>
+<div class="col-xs-12 col-sm-12 col-md-6">
+<?php } else {?>
+<div class="col-12">
 <?php } ?>
 
+<h2 id="checkoutConfirmDefaultBillingAddress"><?php echo HEADING_BILLING_ADDRESS; ?></h2>
+
 <address><?php echo zen_address_format($order->billing['format_id'], $order->billing, 1, ' ', '<br />'); ?></address>
+
+
+<?php if (!$flagDisablePaymentAddressChange) { ?>
+<div class="row">
+    <div class="col-12 mt-2 mb-2">
+      
+        <?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_PAYMENT, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_EDIT_SMALL, BUTTON_EDIT_SMALL_ALT) . '</a>'; ?>  
+        
+    </div>
+</div>
+<?php } ?>
 
 <?php
   $class =& $_SESSION['payment'];
@@ -47,42 +93,19 @@
 <?php
       for ($i=0, $n=sizeof($confirmation['fields']); $i<$n; $i++) {
 ?>
-<div class="back"><?php echo $confirmation['fields'][$i]['title']; ?></div>
-<div ><?php echo $confirmation['fields'][$i]['field']; ?></div>
+<div><?php echo $confirmation['fields'][$i]['title']; ?></div>
+<div><?php echo $confirmation['fields'][$i]['field']; ?></div>
 <?php
      }
 ?>
       </div>
+      
 <?php
   }
 ?>
+</div><!-- END OF BILLING INFO COL WRAPPER -->
+</div><!-- END OF SHIPPING & BILLING INFO ROW -->
 
-<br class="clearBoth" />
-</div>
-
-<?php
-  if ($_SESSION['sendto'] != false) {
-?>
-<div id="checkoutShipto" class="forward">
-<h2 id="checkoutConfirmDefaultShippingAddress"><?php echo HEADING_DELIVERY_ADDRESS; ?></h2>
-<div class="buttonRow forward"><?php echo '<a href="' . $editShippingButtonLink . '">' . zen_image_button(BUTTON_IMAGE_EDIT_SMALL, BUTTON_EDIT_SMALL_ALT) . '</a>'; ?></div>
-
-<address><?php echo zen_address_format($order->delivery['format_id'], $order->delivery, 1, ' ', '<br />'); ?></address>
-
-<?php
-    if ($order->info['shipping_method']) {
-?>
-<h3 id="checkoutConfirmDefaultShipment"><?php echo HEADING_SHIPPING_METHOD; ?></h3>
-<h4 id="checkoutConfirmDefaultShipmentTitle"><?php echo $order->info['shipping_method']; ?></h4>
-
-<?php
-    }
-?>
-</div>
-<?php
-  }
-?>
-<br class="clearBoth" />
 <hr />
 <?php
 // always show comments
@@ -177,8 +200,16 @@
     echo $payment_modules->process_button();
   }
 ?>
-<div class="buttonRow forward"><?php echo zen_image_submit(BUTTON_IMAGE_CONFIRM_ORDER, BUTTON_CONFIRM_ORDER_ALT, 'name="btn_submit" id="btn_submit"') ;?></div>
-</form>
-<div class="buttonRow back"><?php echo TITLE_CONTINUE_CHECKOUT_PROCEDURE . '<br />' . TEXT_CONTINUE_CHECKOUT_PROCEDURE; ?></div>
 
+<div class="row">
+    <div class="col-12 clearfix mt-2 mb-4">
+        
+        <div class="float-left"><?php echo zen_image_submit(BUTTON_IMAGE_CONFIRM_ORDER, BUTTON_CONFIRM_ORDER_ALT, 'name="btn_submit" id="btn_submit"') ;?></div>
+        <div class="float-left mt-2 ml-2"><small><?php echo TITLE_CONTINUE_CHECKOUT_PROCEDURE . TEXT_CONTINUE_CHECKOUT_PROCEDURE; ?></small></div>  
+        
+    </div>
 </div>
+
+</form>
+    </div><!-- END OF CHECKOUT CONFIRMATION DEFAULT COL WRAPPER -->
+</div><!-- END OF CHECKOUT CONFIRMATION DEFAULT ROW -->

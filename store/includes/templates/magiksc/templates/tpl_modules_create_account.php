@@ -52,9 +52,11 @@
   if (ACCOUNT_GENDER == 'true') {
 ?>
 <div class="row no-gutters">
-    <div class="col-3">
-<?php echo zen_draw_radio_field('gender', 'm', '', 'id="gender-male"') . '<label class="radioButtonLabel" for="gender-male">' . MALE . '</label> </div>' . '<div class="col-3">' . zen_draw_radio_field('gender', 'f', '', 'id="gender-female"') . '<label class="radioButtonLabel" for="gender-female">' . FEMALE . '</label> </div> <div class="col-6">' . (zen_not_null(ENTRY_GENDER_TEXT) ? '<span class="alert">' . ENTRY_GENDER_TEXT . '</span></div>': ''); ?>
-</div><!-- END OF MR MRS RADIO ROW -->
+    <div class="col-12">
+        <div class="form-check form-check-inline">
+<?php echo zen_draw_radio_field('gender', 'm', '', 'id="gender-male"') . '<label class="form-check-label radioButtonLabel" for="gender-male">' . MALE . '</label> </div> <div class="form-check form-check-inline">' . zen_draw_radio_field('gender', 'f', '', 'id="gender-female"') . '<label class="form-check-label radioButtonLabel" for="gender-female">' . FEMALE . '</label> ' . (zen_not_null(ENTRY_GENDER_TEXT) ? '<span class="alert">' . ENTRY_GENDER_TEXT . '</span> </div>': ''); ?>
+    </div>
+</div>
 <?php
   }
 ?>

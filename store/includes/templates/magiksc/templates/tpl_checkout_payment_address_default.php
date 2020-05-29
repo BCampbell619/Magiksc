@@ -12,8 +12,8 @@
  * @version $Id: tpl_checkout_payment_address_default.php 4852 2006-10-28 06:47:45Z drbyte $
  */
 ?>
-<div class="centerColumn" id="checkoutPayAddressDefault">
-
+<div class="row" id="checkoutPayAddressDefault">
+    <div class="col-12">
 <?php echo zen_draw_form('checkout_address', zen_href_link(FILENAME_CHECKOUT_PAYMENT_ADDRESS, '', 'SSL'), 'post', 'onsubmit="return check_form_optional(checkout_address);"'); ?>
 
 <h1 id="checkoutPayAddressDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
@@ -22,9 +22,8 @@
 
 <h2 id="checkoutPayAddressDefaultAddress"><?php echo TITLE_PAYMENT_ADDRESS; ?></h2>
 
-<address class="back"><?php echo zen_address_label($_SESSION['customer_id'], $_SESSION['billto'], true, ' ', '<br />'); ?></address>
-<div class="instructions"><?php echo TEXT_SELECTED_PAYMENT_DESTINATION; ?></div>
-<br class="clearBoth" />
+<p><?php echo TEXT_SELECTED_PAYMENT_DESTINATION; ?></p>
+<address><strong><?php echo zen_address_label($_SESSION['customer_id'], $_SESSION['billto'], true, ' ', '<br />'); ?></strong></address>
 
 <?php
      if ($addresses_count < MAX_ADDRESS_BOOK_ENTRIES) {
@@ -50,16 +49,21 @@
      }
 ?>
 
-<div class="buttonRow forward"><?php echo zen_draw_hidden_field('action', 'submit') . zen_image_submit(BUTTON_IMAGE_CONTINUE, BUTTON_CONTINUE_ALT); ?></div>
-<div class="buttonRow back"><?php echo TITLE_CONTINUE_CHECKOUT_PROCEDURE . '<br />' . TEXT_CONTINUE_CHECKOUT_PROCEDURE; ?></div>
+<div class="row">
+    <div class="col-12 clearfix mt-2 mb-4">
+        <div class="float-left"><?php echo zen_draw_hidden_field('action', 'submit') . zen_image_submit(BUTTON_IMAGE_CONTINUE, BUTTON_CONTINUE_ALT); ?></div>
+        <div class="float-left mt-2 ml-2"><small><?php echo TITLE_CONTINUE_CHECKOUT_PROCEDURE . TEXT_CONTINUE_CHECKOUT_PROCEDURE; ?></small></div>
 
 <?php
   if ($process == true) {
 ?>
-<div class="buttonRow back"><?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_PAYMENT_ADDRESS, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_BACK, BUTTON_BACK_ALT) . '</a>'; ?></div>
+        <div class="float-right"><?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_PAYMENT_ADDRESS, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_BACK, BUTTON_BACK_ALT) . '</a>'; ?></div>
 
 <?php
   }
 ?>
-</form>
+    </div>
 </div>
+</form>
+    </div> <!-- END OF CHECKOUT PAYMENT ADDRESS DEFAULT COL WRAPPER -->
+</div><!-- END OF CHECKOUT PAYMENT ADDRESS DEFAULT ROW -->

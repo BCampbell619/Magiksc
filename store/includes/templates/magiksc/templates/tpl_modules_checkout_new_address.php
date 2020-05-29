@@ -26,15 +26,6 @@
 <?php echo zen_draw_radio_field('gender', 'm', '', 'id="gender-male"') . '<label class="form-check-label radioButtonLabel" for="gender-male">' . MALE . '</label> </div> <div class="form-check form-check-inline">' . zen_draw_radio_field('gender', 'f', '', 'id="gender-female"') . '<label class="form-check-label radioButtonLabel" for="gender-female">' . FEMALE . '</label> ' . (zen_not_null(ENTRY_GENDER_TEXT) ? '<span class="alert">' . ENTRY_GENDER_TEXT . '</span> </div>': ''); ?>
     </div>
 </div>
-<script type="text/javascript">
-
-    let formControlMale = document.querySelector("#gender-male"),
-        formControlFemale = document.querySelector("#gender-female");
-    
-    formControlMale.setAttribute("class", "form-check-input");
-    formControlFemale.setAttribute("class", "form-check-input");
-
-</script>
 <?php
   }
 ?>
